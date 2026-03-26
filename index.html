@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mycelium — Infrastruttura Agricola Intelligente</title>
+    <meta name="description" content="Mycelium sviluppa ecosistemi robotici, digitali ed energetici per abilitare l'agricoltura autonoma e rigenerativa.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">
+                <svg class="nav__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                    <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.7"/>
+                    <circle cx="30" cy="10" r="2" fill="currentColor" opacity="0.7"/>
+                    <circle cx="10" cy="30" r="2" fill="currentColor" opacity="0.7"/>
+                    <circle cx="30" cy="30" r="2" fill="currentColor" opacity="0.7"/>
+                    <circle cx="20" cy="6" r="1.5" fill="currentColor" opacity="0.5"/>
+                    <circle cx="34" cy="20" r="1.5" fill="currentColor" opacity="0.5"/>
+                    <circle cx="6" cy="20" r="1.5" fill="currentColor" opacity="0.5"/>
+                    <circle cx="20" cy="34" r="1.5" fill="currentColor" opacity="0.5"/>
+                    <line x1="20" y1="20" x2="10" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                    <line x1="20" y1="20" x2="30" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                    <line x1="20" y1="20" x2="10" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                    <line x1="20" y1="20" x2="30" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                    <line x1="10" y1="10" x2="20" y2="6" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                    <line x1="30" y1="10" x2="20" y2="6" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                    <line x1="30" y1="10" x2="34" y2="20" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                    <line x1="30" y1="30" x2="34" y2="20" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                    <line x1="10" y1="30" x2="6" y2="20" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                    <line x1="10" y1="10" x2="6" y2="20" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                    <line x1="10" y1="30" x2="20" y2="34" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                    <line x1="30" y1="30" x2="20" y2="34" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                </svg>
+                <span>Mycelium</span>
+            </a>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav__menu" id="navMenu">
+                <li><a href="#visione" class="nav__link">Visione</a></li>
+                <li><a href="#ecosistema" class="nav__link">Ecosistema</a></li>
+                <li><a href="#tecnologia" class="nav__link">Tecnologia</a></li>
+                <li><a href="#impatto" class="nav__link">Impatto</a></li>
+                <li><a href="#contatti" class="nav__link nav__link--cta">Contattaci</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <canvas class="hero__canvas" id="heroCanvas"></canvas>
+        <div class="hero__content">
+            <div class="hero__badge">Infrastruttura Agricola ad Alta Tecnologia</div>
+            <h1 class="hero__title">
+                Non costruiamo macchine.<br>
+                <span class="hero__title--accent">Costruiamo reti intelligenti.</span>
+            </h1>
+            <p class="hero__subtitle">
+                Come il micelio connette gli ecosistemi biologici attraverso reti sotterranee invisibili,
+                Mycelium connette robotica, energia e intelligenza in ecosistemi agricoli distribuiti e auto-operativi.
+            </p>
+            <div class="hero__actions">
+                <a href="#ecosistema" class="btn btn--primary">Scopri l'ecosistema</a>
+                <a href="#contatti" class="btn btn--outline">Parla con noi</a>
+            </div>
+        </div>
+        <div class="hero__scroll">
+            <span>Scorri</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="section vision" id="visione">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__label">La nostra visione</span>
+                <h2 class="section__title">L'agricoltura del futuro è un ecosistema connesso</h2>
+            </div>
+            <div class="vision__grid">
+                <div class="vision__text">
+                    <p class="vision__lead">
+                        Mycelium è un'azienda italiana che progetta l'infrastruttura per l'agricoltura
+                        autonoma e rigenerativa. Sviluppiamo ecosistemi robotici, digitali ed energetici
+                        che operano come una rete biologica intelligente.
+                    </p>
+                    <p>
+                        Il nostro approccio parte dalla natura stessa: il micelio — la rete fungina sotterranea
+                        che connette e nutre interi ecosistemi forestali. Allo stesso modo, la nostra tecnologia
+                        crea connessioni invisibili tra robot, sensori, fonti energetiche e intelligenza artificiale,
+                        permettendo ai campi di auto-gestirsi e rigenerarsi.
+                    </p>
+                </div>
+                <div class="vision__stats">
+                    <div class="stat">
+                        <span class="stat__number" data-count="100">0</span><span class="stat__suffix">%</span>
+                        <span class="stat__label">Autonomia operativa target</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number" data-count="3">0</span>
+                        <span class="stat__label">Layer ecosistemici integrati</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number" data-count="0">0</span>
+                        <span class="stat__label">Emissioni nette obiettivo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem -->
+    <section class="section ecosystem" id="ecosistema">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__label">L'ecosistema</span>
+                <h2 class="section__title">Tre layer, un'unica rete intelligente</h2>
+                <p class="section__description">
+                    Ogni layer è progettato per funzionare autonomamente, ma la vera potenza
+                    emerge quando operano come sistema integrato.
+                </p>
+            </div>
+            <div class="ecosystem__grid">
+                <div class="ecosystem__card" data-layer="robotica">
+                    <div class="ecosystem__card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4L4 14v20l20 10 20-10V14L24 4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="24" y1="18" x2="24" y2="4" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                            <line x1="30" y1="24" x2="44" y2="14" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                            <line x1="18" y1="24" x2="4" y2="14" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="ecosystem__card-title">Layer Robotico</h3>
+                    <p class="ecosystem__card-text">
+                        Flotte di robot autonomi che eseguono operazioni colturali con precisione millimetrica.
+                        Semina, monitoraggio, trattamenti mirati e raccolta — tutto orchestrato da intelligenza distribuita.
+                    </p>
+                    <ul class="ecosystem__card-features">
+                        <li>Navigazione autonoma multi-terreno</li>
+                        <li>Manipolazione precisa delle colture</li>
+                        <li>Coordinamento sciame distribuito</li>
+                    </ul>
+                </div>
+                <div class="ecosystem__card" data-layer="digitale">
+                    <div class="ecosystem__card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="32" cy="16" r="3" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="16" cy="32" r="3" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="32" cy="32" r="3" stroke="currentColor" stroke-width="1"/>
+                            <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="1"/>
+                            <line x1="16" y1="16" x2="24" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+                            <line x1="32" y1="16" x2="24" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+                            <line x1="16" y1="32" x2="24" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+                            <line x1="32" y1="32" x2="24" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="ecosystem__card-title">Layer Digitale</h3>
+                    <p class="ecosystem__card-text">
+                        Piattaforma di intelligenza che raccoglie, elabora e trasforma dati da sensori,
+                        droni e satelliti in decisioni operative in tempo reale per ogni metro quadro di terreno.
+                    </p>
+                    <ul class="ecosystem__card-features">
+                        <li>Digital twin agronomico</li>
+                        <li>AI predittiva e prescrittiva</li>
+                        <li>Monitoraggio multispettrale continuo</li>
+                    </ul>
+                </div>
+                <div class="ecosystem__card" data-layer="energetico">
+                    <div class="ecosystem__card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M24 8a16 16 0 0 1 0 32" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                            <path d="M26 18h-6l-2 8h5l-1 8 8-12h-6l2-4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="ecosystem__card-title">Layer Energetico</h3>
+                    <p class="ecosystem__card-text">
+                        Infrastruttura energetica distribuita che alimenta l'intero ecosistema con fonti rinnovabili.
+                        Micro-grid intelligenti, storage e gestione energetica adattiva integrata nell'azienda agricola.
+                    </p>
+                    <ul class="ecosystem__card-features">
+                        <li>Micro-grid agrivoltaiche</li>
+                        <li>Storage distribuito intelligente</li>
+                        <li>Autosufficienza energetica</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="section technology" id="tecnologia">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__label">La tecnologia</span>
+                <h2 class="section__title">Architettura distribuita, intelligenza collettiva</h2>
+            </div>
+            <div class="technology__grid">
+                <div class="technology__item">
+                    <div class="technology__number">01</div>
+                    <h3 class="technology__item-title">Intelligenza Distribuita</h3>
+                    <p>Nessun punto centrale di fallimento. Ogni nodo della rete è autonomo e contribuisce all'intelligenza collettiva del sistema, proprio come le cellule del micelio biologico.</p>
+                </div>
+                <div class="technology__item">
+                    <div class="technology__number">02</div>
+                    <h3 class="technology__item-title">Interoperabilità Nativa</h3>
+                    <p>Protocolli aperti e standard che permettono a qualsiasi dispositivo, sensore o macchina di integrarsi nella rete Mycelium e comunicare con il resto dell'ecosistema.</p>
+                </div>
+                <div class="technology__item">
+                    <div class="technology__number">03</div>
+                    <h3 class="technology__item-title">Apprendimento Continuo</h3>
+                    <p>Il sistema impara da ogni ciclo colturale, da ogni dato ambientale, da ogni decisione. L'ecosistema diventa più efficiente e preciso nel tempo, adattandosi al terreno specifico.</p>
+                </div>
+                <div class="technology__item">
+                    <div class="technology__number">04</div>
+                    <h3 class="technology__item-title">Resilienza by Design</h3>
+                    <p>Architettura fault-tolerant che garantisce continuità operativa anche in condizioni avverse. Se un nodo cade, la rete si riconfigura automaticamente.</p>
+                </div>
+                <div class="technology__item">
+                    <div class="technology__number">05</div>
+                    <h3 class="technology__item-title">Edge Computing Agricolo</h3>
+                    <p>Elaborazione dati direttamente in campo, dove servono. Latenza minima per decisioni in tempo reale, anche senza connettività cloud.</p>
+                </div>
+                <div class="technology__item">
+                    <div class="technology__number">06</div>
+                    <h3 class="technology__item-title">Sostenibilità Integrata</h3>
+                    <p>Ogni componente è progettato per minimizzare l'impatto ambientale e massimizzare la rigenerazione del suolo. La tecnologia al servizio della biologia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="section impact" id="impatto">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__label">L'impatto</span>
+                <h2 class="section__title">Rigenerare, non solo produrre</h2>
+            </div>
+            <div class="impact__grid">
+                <div class="impact__card">
+                    <div class="impact__icon">
+                        <svg viewBox="0 0 32 32" fill="none"><path d="M16 4C9.4 4 4 9.4 4 16s5.4 12 12 12 12-5.4 12-12S22.6 4 16 4zm0 22c-5.5 0-10-4.5-10-10S10.5 6 16 6s10 4.5 10 10-4.5 10-10 10z" fill="currentColor" opacity="0.3"/><path d="M16 8v8l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Riduzione della manodopera</h3>
+                    <p>L'automazione libera gli agricoltori dalle operazioni ripetitive, permettendo di concentrarsi sulla strategia e la qualità.</p>
+                </div>
+                <div class="impact__card">
+                    <div class="impact__icon">
+                        <svg viewBox="0 0 32 32" fill="none"><path d="M16 2l4 8h8l-6 5 2 9-8-5-8 5 2-9-6-5h8z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </div>
+                    <h3>Rigenerazione del suolo</h3>
+                    <p>Pratiche colturali precise e data-driven che migliorano la salute del suolo ad ogni ciclo, aumentando la biodiversità.</p>
+                </div>
+                <div class="impact__card">
+                    <div class="impact__icon">
+                        <svg viewBox="0 0 32 32" fill="none"><path d="M8 24c0-8 8-16 8-16s8 8 8 16" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="16" y1="16" x2="16" y2="28" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </div>
+                    <h3>Efficienza idrica</h3>
+                    <p>Irrigazione di precisione basata su dati reali del suolo e delle piante, con riduzione drastica dei consumi idrici.</p>
+                </div>
+                <div class="impact__card">
+                    <div class="impact__icon">
+                        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M7.8 7.8l2.8 2.8M21.4 21.4l2.8 2.8M7.8 24.2l2.8-2.8M21.4 10.6l2.8-2.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Indipendenza energetica</h3>
+                    <p>Infrastruttura energetica rinnovabile integrata che rende l'azienda agricola autosufficiente e carbon-negative.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta" id="contatti">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title">Costruiamo insieme l'agricoltura del futuro</h2>
+                <p class="cta__text">
+                    Che tu sia un'azienda agricola, un investitore o un partner tecnologico,
+                    vogliamo conoscerti.
+                </p>
+                <a href="mailto:info@myceliumlab.it" class="btn btn--primary btn--large">
+                    info@myceliumlab.it
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#" class="nav__logo">
+                        <svg class="nav__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                            <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.7"/>
+                            <circle cx="30" cy="10" r="2" fill="currentColor" opacity="0.7"/>
+                            <circle cx="10" cy="30" r="2" fill="currentColor" opacity="0.7"/>
+                            <circle cx="30" cy="30" r="2" fill="currentColor" opacity="0.7"/>
+                            <line x1="20" y1="20" x2="10" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                            <line x1="20" y1="20" x2="30" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                            <line x1="20" y1="20" x2="10" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                            <line x1="20" y1="20" x2="30" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+                        </svg>
+                        <span>Mycelium</span>
+                    </a>
+                    <p class="footer__tagline">Infrastruttura per l'agricoltura autonoma e rigenerativa.</p>
+                </div>
+                <div class="footer__links">
+                    <h4>Esplora</h4>
+                    <ul>
+                        <li><a href="#visione">Visione</a></li>
+                        <li><a href="#ecosistema">Ecosistema</a></li>
+                        <li><a href="#tecnologia">Tecnologia</a></li>
+                        <li><a href="#impatto">Impatto</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li><a href="mailto:info@myceliumlab.it">info@myceliumlab.it</a></li>
+                        <li>Italia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Mycelium S.r.l. — Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
