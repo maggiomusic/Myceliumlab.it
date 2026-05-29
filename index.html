@@ -3,388 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mycelium — Tool Elettrico Autonomo per l'Agricoltura Sostenibile</title>
-    <meta name="description" content="Mycelium: tool elettrico autonomo per l'agricoltura su piccola scala. Compatibile con attrezzi standard, autonomo 24/7, open source.">
+    <title>Mycelium Lab &mdash; Il sistema operativo dell'agricoltura rigenerativa</title>
+    <meta name="description" content="Mycelium Lab s.r.l. progetta nodi robotici elettrici e autonomi per un'agricoltura distribuita, rigenerativa e accessibile.">
+    <link rel="icon" type="image/png" href="img1/OFFICIAL LOGO.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav__container">
-            <a href="#" class="nav__logo">
-                <img class="nav__logo-icon" src="folder/logo1.png" alt="Mycelium logo">
-                <span>Mycelium</span>
-            </a>
-            <button class="nav__toggle" id="navToggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav__menu" id="navMenu">
-                <li><a href="#perche" class="nav__link">Perch&eacute;</a></li>
-                <li><a href="#visione" class="nav__link">Visione</a></li>
-                <li><a href="#prodotto" class="nav__link">Prodotto</a></li>
-                <li><a href="#evoluzione" class="nav__link">Evoluzione</a></li>
-                <li><a href="#contatti" class="nav__link nav__link--cta">Contattaci</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <!-- Synapse background canvas -->
     <canvas class="synapse-canvas" id="heroCanvas"></canvas>
 
-    <!-- Hero -->
-    <section class="hero hero--bg">
-        <div class="hero__content">
-            <h1 class="hero__title">The blueprint for a new agricultural infrastructure.</h1>
+    <!-- Side network navigation -->
+    <aside class="sidenav" id="sidenav" aria-label="Navigazione di sezione">
+        <svg class="sidenav__net" viewBox="0 0 80 520" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="40" y1="50"  x2="40" y2="150" />
+            <line x1="40" y1="150" x2="40" y2="250" />
+            <line x1="40" y1="250" x2="40" y2="350" />
+            <line x1="40" y1="350" x2="40" y2="450" />
+        </svg>
+        <ul class="sidenav__list">
+            <li><a href="#home" class="sidenav__link" data-target="home">
+                <span class="sidenav__node"></span><span class="sidenav__label">Mycelium</span>
+            </a></li>
+            <li><a href="#node" class="sidenav__link" data-target="node">
+                <span class="sidenav__node"></span><span class="sidenav__label">Mycelium Node</span>
+            </a></li>
+            <li><a href="#applicazioni" class="sidenav__link" data-target="applicazioni">
+                <span class="sidenav__node"></span><span class="sidenav__label">Applicazioni</span>
+            </a></li>
+            <li><a href="#vieni" class="sidenav__link" data-target="vieni">
+                <span class="sidenav__node"></span><span class="sidenav__label">Vieni a visitarci</span>
+            </a></li>
+            <li><a href="#valori" class="sidenav__link" data-target="valori">
+                <span class="sidenav__node"></span><span class="sidenav__label">I nostri valori</span>
+            </a></li>
+        </ul>
+    </aside>
+
+    <!-- Mobile nav toggle -->
+    <button class="mobilenav__toggle" id="mobilenavToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <!-- =====================================================
+         1. HOME
+         ===================================================== -->
+    <section class="page home" id="home">
+        <header class="home__top">
+            <img src="img1/OFFICIAL LOGO.png" alt="Mycelium logo" class="home__logo home__logo--pulse">
+            <span class="home__wordmark">MYCELIUM</span>
+        </header>
+
+        <div class="home__center">
+            <img src="img1/home.png" alt="Mycelium &mdash; il sistema operativo dell'agricoltura rigenerativa" class="home__image">
+            <p class="home__tagline">Il sistema operativo dell'agricoltura rigenerativa.</p>
         </div>
-        <div class="hero__scroll">
-            <span>Scorri</span>
-            <div class="hero__scroll-line"></div>
+
+        <p class="home__copyright">
+            marchio &copy; copyright Mycelium Lab s.r.l. &mdash; rights reserved &mdash; P.IVA 04262350368
+        </p>
+    </section>
+
+    <!-- =====================================================
+         2. MYCELIUM NODE
+         ===================================================== -->
+    <section class="page node" id="node">
+        <div class="node__inner">
+            <header class="page__header">
+                <span class="page__label">02 &mdash; Prodotto</span>
+                <h2 class="page__title">Mycelium <span class="accent">Node</span></h2>
+                <p class="page__lead">Tocca i nodi viola per esplorare ogni caratteristica.</p>
+            </header>
+
+            <div class="node__stage">
+                <img src="img1/Mycelium lato.png" alt="Mycelium &mdash; vista laterale" class="node__image">
+
+                <!-- Pallini cliccabili -->
+                <div class="node__bullets">
+                    <button class="node__bullet" data-spec="autonomia"  style="--x:8%;  --y:18%;">
+                        <span class="node__dot"></span><span class="node__name">Autonomia</span>
+                    </button>
+                    <button class="node__bullet" data-spec="propulsione" style="--x:8%;  --y:42%;">
+                        <span class="node__dot"></span><span class="node__name">Propulsione</span>
+                    </button>
+                    <button class="node__bullet" data-spec="controllo"  style="--x:8%;  --y:66%;">
+                        <span class="node__dot"></span><span class="node__name">Controllo</span>
+                    </button>
+                    <button class="node__bullet" data-spec="attrezzi"   style="--x:8%;  --y:88%;">
+                        <span class="node__dot"></span><span class="node__name">Attrezzi</span>
+                    </button>
+                    <button class="node__bullet" data-spec="dimensioni" style="--x:92%; --y:18%;">
+                        <span class="node__dot"></span><span class="node__name">Dimensioni</span>
+                    </button>
+                    <button class="node__bullet" data-spec="connesso"   style="--x:92%; --y:38%;">
+                        <span class="node__dot"></span><span class="node__name">Connesso</span>
+                    </button>
+                    <button class="node__bullet" data-spec="funzioni"   style="--x:92%; --y:58%;">
+                        <span class="node__dot"></span><span class="node__name">Funzioni</span>
+                    </button>
+                    <button class="node__bullet" data-spec="vantaggi"   style="--x:92%; --y:78%;">
+                        <span class="node__dot"></span><span class="node__name">Vantaggi</span>
+                    </button>
+                    <button class="node__bullet" data-spec="garanzia"   style="--x:50%; --y:6%;">
+                        <span class="node__dot"></span><span class="node__name">Garanzia</span>
+                    </button>
+                    <button class="node__bullet" data-spec="prezzo"     style="--x:50%; --y:96%;">
+                        <span class="node__dot"></span><span class="node__name">Prezzo</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Spec detail panel -->
+            <div class="node__detail" id="nodeDetail" role="region" aria-live="polite">
+                <div class="node__detail-inner" data-default>
+                    <h3>Seleziona un nodo</h3>
+                    <p>Clicca i pallini magenta intorno all'immagine per scoprire le specifiche di Mycelium.</p>
+                </div>
+            </div>
+
+            <!-- Spec content (hidden, used by JS) -->
+            <template id="nodeSpecs">
+                <div data-spec="autonomia">
+                    <h3>Autonomia</h3>
+                    <p>Un Mycelium gestisce tranquillamente <strong>10 ettari in 24/7</strong> con una sola ricarica (10h), si ricarica da solo e torna a lavorare.</p>
+                </div>
+                <div data-spec="propulsione">
+                    <h3>Propulsione</h3>
+                    <p><strong>25 CV</strong> di potenza elettrica continuativa, finemente regolabile e silenziosa anche per il lavoro notturno. Affronta pendenze fino al <strong>35%</strong>.</p>
+                </div>
+                <div data-spec="controllo">
+                    <h3>Controllo</h3>
+                    <p>Autonomo o da radiocomando. Sensori e telecamere a <strong>360&deg;</strong> per navigazione e anti-collisione. Aggancio automatico degli attrezzi e rifornimento serbatoi automatico.</p>
+                </div>
+                <div data-spec="attrezzi">
+                    <h3>Attrezzi</h3>
+                    <p>Compatibile con tutti gli attrezzi: <strong>attacco standard ISO 500</strong> e sollevatore idraulico <strong>CAT I/II da 1 t</strong> di serie. Attacco 3 punti con sollevatore frontale in optional, come pala e bulldozer. Connessione <strong>ISOBUS</strong> e box di distribuzione idraulico di serie.</p>
+                </div>
+                <div data-spec="funzioni">
+                    <h3>Funzioni</h3>
+                    <p>Tutto come il tuo trattore. Fornisce energia elettrica <strong>230 V&sim;c 32 A</strong>, gestisce il quaderno di campagna e produce report utili sullo stato di salute di piante e animali.</p>
+                </div>
+                <div data-spec="dimensioni">
+                    <h3>Dimensioni</h3>
+                    <p>Lunghezza <strong>2,6 m</strong>, altezza <strong>1,4 m</strong>, con carreggiata regolabile da <strong>0,75 a 1,3 m</strong>.</p>
+                </div>
+                <div data-spec="connesso">
+                    <h3>Connesso</h3>
+                    <p>Osserva ed elabora dati confrontandoli con meteo e storico. Fornisce suggerimenti e ottimizza le operazioni per <strong>maggiore produttivit&agrave;</strong> e <strong>minor costo</strong>.</p>
+                </div>
+                <div data-spec="vantaggi">
+                    <h3>Vantaggi</h3>
+                    <p><strong>Payback in meno di 2 anni</strong>. Risparmio operativo <strong>-25 &euro;/h</strong>.</p>
+                </div>
+                <div data-spec="garanzia">
+                    <h3>Garanzia</h3>
+                    <p><strong>5 anni</strong>. Servizi di assistenza e ricambi a domicilio entro <strong>48 h</strong>. Noleggio flotta a <strong>100 &euro;/h</strong> cadauno.</p>
+                </div>
+                <div data-spec="prezzo">
+                    <h3>Prezzo</h3>
+                    <p><strong>95.000 &euro;</strong> rateizzabile. Include il tool e la stazione di ricarica.</p>
+                </div>
+            </template>
+
+            <div class="node__cta">
+                <a href="#vieni" class="btn btn--primary btn--large">Richiedi una demo</a>
+            </div>
         </div>
     </section>
 
-    <!-- Why -->
-    <section class="section why" id="perche">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__label">Why Mycelium exists</span>
-                <h2 class="section__title">Agriculture is entering a structural breakdown</h2>
-                <p class="section__description">
-                    Labor shortage, aging operators, rising energy costs, climate instability, chemical dependency and economic fragility are pushing a model that is centralized, capital intensive, mechanically dependent and operationally rigid to its breaking point.
-                </p>
-                <p class="why__statement">This model is failing.</p>
+    <!-- =====================================================
+         3. APPLICAZIONI
+         ===================================================== -->
+    <section class="page applicazioni" id="applicazioni">
+        <header class="page__header">
+            <span class="page__label">03 &mdash; Una piattaforma. Tanti utilizzi.</span>
+            <h2 class="page__title">Applicazioni</h2>
+            <p class="page__lead">Scorri per esplorare i contesti operativi di Mycelium.</p>
+        </header>
+
+        <div class="apps">
+            <button class="apps__arrow apps__arrow--left" id="appsPrev" aria-label="Precedente">&larr;</button>
+            <div class="apps__rail" id="appsRail">
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI1.png" alt="Applicazione 01">
+                    <div class="apps__caption"><span>01</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI2.png" alt="Applicazione 02">
+                    <div class="apps__caption"><span>02</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI3.png" alt="Applicazione 03">
+                    <div class="apps__caption"><span>03</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI4.png" alt="Applicazione 04">
+                    <div class="apps__caption"><span>04</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI5.png" alt="Applicazione 05">
+                    <div class="apps__caption"><span>05</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI6.png" alt="Applicazione 06">
+                    <div class="apps__caption"><span>06</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI7.png" alt="Applicazione 07">
+                    <div class="apps__caption"><span>07</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI8.png" alt="Applicazione 08">
+                    <div class="apps__caption"><span>08</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI9.png" alt="Applicazione 09">
+                    <div class="apps__caption"><span>09</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI10.png" alt="Applicazione 10">
+                    <div class="apps__caption"><span>10</span></div>
+                </article>
+                <article class="apps__item">
+                    <img src="img1/APPLICAZIONI11.png" alt="Applicazione 11">
+                    <div class="apps__caption"><span>11</span></div>
+                </article>
             </div>
-            <div class="why__grid">
-                <div class="why__card">
-                    <div class="why__card-number" data-count="1.13">0</div>
-                    <span class="why__card-suffix">milioni</span>
-                    <h3>Aziende agricole italiane</h3>
-                    <p>Forte domanda di automazione low-cost e sostenibile. Italia primo mercato UE bio.</p>
-                </div>
-                <div class="why__card">
-                    <div class="why__card-number" data-count="2.5">0</div>
-                    <span class="why__card-suffix">&euro; miliardi</span>
-                    <h3>Mercato Smart Agriculture Italia</h3>
-                    <p>L'industria 4.0 applicata all'agricoltura. In crescita costante dal 2024.</p>
-                </div>
-                <div class="why__card">
-                    <div class="why__card-number" data-count="3.3">0</div>
-                    <span class="why__card-suffix">milioni</span>
-                    <h3>Agricoltori in uscita entro il 2027</h3>
-                    <p>Et&agrave; media degli agricoltori italiani: 58 anni. L'automazione &egrave; una necessit&agrave;.</p>
-                </div>
+            <button class="apps__arrow apps__arrow--right" id="appsNext" aria-label="Successivo">&rarr;</button>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         4. VIENI A VISITARCI
+         ===================================================== -->
+    <section class="page visit" id="vieni">
+        <header class="page__header">
+            <span class="page__label">04 &mdash; Vieni a trovarci</span>
+            <h2 class="page__title">Vieni a visitarci</h2>
+        </header>
+
+        <div class="visit__grid">
+            <div class="visit__image">
+                <img src="img1/STAFF.png" alt="Lo staff di Mycelium Lab">
             </div>
-            <div class="why__problem">
-                <div class="why__problem-text">
-                    <h3>Le tecnologie attuali servono solo l'agricoltura industriale</h3>
+
+            <div class="visit__body">
+                <div class="visit__block">
+                    <h3>Dove siamo</h3>
+                    <p>Mycelium Lab s.r.l. &mdash; sito produttivo in <strong>Viale Virgilio 50, 41123 Modena</strong>.<br>
+                       Oppure richiedi una demo: te lo mostriamo in azione.</p>
+                </div>
+
+                <div class="visit__block">
+                    <h3>Contatti</h3>
+                    <ul class="visit__contacts">
+                        <li><span>Telefono</span><a href="tel:+393464734538">+39 346 4734538</a></li>
+                        <li><span>PEC</span><a href="mailto:myceliumlab@pec.it">myceliumlab@pec.it</a></li>
+                        <li><span>Email</span><a href="mailto:federico@myceliumlab.it">federico@myceliumlab.it</a></li>
+                    </ul>
+                </div>
+
+                <form class="visit__form" id="contactForm" novalidate>
+                    <h3>Scrivici</h3>
+                    <div class="visit__field">
+                        <label for="senderEmail">La tua email</label>
+                        <input type="email" id="senderEmail" name="email" required placeholder="nome@azienda.it">
+                    </div>
+                    <div class="visit__field">
+                        <label for="subject">Oggetto</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Richiesta demo, informazioni&hellip;">
+                    </div>
+                    <button type="submit" class="btn btn--primary">Invia messaggio</button>
+                </form>
+
+                <div class="visit__story">
                     <p>
-                        GNSS auto-steering, farm data platform, sensori remoti: tutto pensato per grandi trattori
-                        e grandi estensioni. Ma la viticoltura, la frutticoltura, le colture su terreni con interfilare
-                        stretto e dislivelli complessi restano escluse.
-                    </p>
-                    <p class="why__highlight">
-                        &Egrave; il momento del "purple tool" che il mondo non ha ancora immaginato.
+                        Rappresentiamo con le nostre mani e le nostre idee un'azienda innovativa nata dall'incontro tra due mondi:
+                        <strong>Emanuele</strong>, imprenditore nel settore agricolo, e <strong>Federico</strong>, ingegnere
+                        specializzato in elettrificazione. Con l'obiettivo di ridurre la dipendenza dal lavoro manuale, aumentare
+                        l'autonomia operativa e soprattutto migliorare la qualit&agrave; della vita di agricoltori, piante e animali.
+                        Da questa tensione tra problema reale e competenza tecnica prende forma l'idea di Mycelium. Poi l'arrivo
+                        di <strong>Qiuting</strong>, esperta software e di tecnologie provenienti esclusivamente dalla Cina, che porta
+                        la dimensione digitale e rende possibile trasformare il sistema in una piattaforma intelligente, connessa e scalabile.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision -->
-    <section class="section vision" id="visione">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__label">Visione e filosofia</span>
-                <h2 class="section__title">Liberare gli agricoltori dalla monocoltura e dalle macchine</h2>
-            </div>
-            <div class="vision__grid">
-                <div class="vision__image">
-                    <img src="img/vision.png" alt="Visione e filosofia del progetto Mycelium">
-                </div>
-                <div class="vision__pillars">
-                    <div class="vision__pillar">
-                        <h3>Libert&agrave; operativa</h3>
-                        <p>
-                            Aumentare il tempo libero e la qualit&agrave; del lavoro per consentire prodotti agricoli
-                            pi&ugrave; diversificati e di qualit&agrave; superiore.
-                        </p>
-                    </div>
-                    <div class="vision__pillar">
-                        <h3>Tecnologia trasformativa</h3>
-                        <p>
-                            Progettata per minimizzare l'impatto ambientale, Mycelium supporta l'agricoltura
-                            rigenerativa e opera in armonia tra piante e animali.
-                        </p>
-                    </div>
-                    <div class="vision__pillar">
-                        <h3>Open Source</h3>
-                        <p>
-                            Per mantenere MyceliumOS in continua evoluzione, coinvolgiamo gli agricoltori
-                            attraverso un modello di membership aperto. Come il micelio che connette gli ecosistemi,
-                            abbracciamo innovazione aperta e collaborazione.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- =====================================================
+         5. I NOSTRI VALORI
+         ===================================================== -->
+    <section class="page values" id="valori">
+        <header class="page__header">
+            <span class="page__label">05 &mdash; Filosofia</span>
+            <h2 class="page__title">I nostri valori</h2>
+        </header>
 
-    <!-- Product -->
-    <section class="section product" id="prodotto">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__label">Il prodotto</span>
-                <h2 class="section__title">Mycelium &egrave; un multiTOOL</h2>
-                <p class="section__description">
-                    ...per servire il 93% degli agricoltori classificati family farms.
+        <div class="values__grid">
+            <div class="values__image">
+                <img src="img1/MISSION&amp;VISION.png" alt="Mission &amp; Vision di Mycelium">
+            </div>
+            <div class="values__body">
+                <p>
+                    Mycelium nasce per <strong>accelerare la transizione verso un'agricoltura rigenerativa, autonoma e accessibile</strong>.
+                    Sviluppiamo una piattaforma elettrica, modulare e connessa pensata per superare i limiti dell'agricoltura basata
+                    su grandi macchine, monoculture e processi rigidi. Il nostro obiettivo &egrave; restituire agli agricoltori
+                    libert&agrave; operativa, flessibilit&agrave; e controllo, rendendo l'automazione disponibile anche per
+                    aziende agricole piccole e medie.
+                </p>
+                <p>
+                    Mycelium &egrave; progettato per lavorare in modo continuo, efficiente e a basso impatto all'interno di
+                    ecosistemi agricoli complessi, dove colture, suolo, animali, dati ed energia fanno parte dello stesso sistema.
+                    Supporta pratiche come <em>permacultura</em>, <em>agricoltura sintropica</em>, lavorazioni leggere e interventi
+                    selettivi, riducendo input, compattamento, emissioni e dipendenza operativa.
+                </p>
+                <p>
+                    La nostra visione &egrave; costruire il <strong>sistema operativo dell'agricoltura rigenerativa</strong>:
+                    una rete di piccoli nodi intelligenti, elettrici e collaborativi, capaci di operare nel paesaggio agricolo senza
+                    dominarlo. Come il micelio connette gli ecosistemi naturali, Mycelium connette agricoltori, macchine, dati,
+                    energia e tecnologie in un'infrastruttura distribuita, adattabile e resiliente.
+                </p>
+                <p>
+                    Crediamo in un modello aperto, indipendente e in continua evoluzione. <strong>MyceliumOS</strong> nasce come
+                    ecosistema open source, sviluppato insieme agli agricoltori attraverso una membership aperta, per ridurre la
+                    dipendenza da sistemi chiusi e grandi corporation agritech. L'innovazione deve restare vicina al campo,
+                    verificabile nell'uso reale e guidata dai bisogni di chi lavora la terra.
+                </p>
+
+                <ul class="values__pillars">
+                    <li>Libert&agrave; operativa</li>
+                    <li>Sostenibilit&agrave; reale</li>
+                    <li>Collaborazione aperta</li>
+                    <li>Innovazione distribuita</li>
+                    <li>Rispetto degli ecosistemi agricoli</li>
+                </ul>
+
+                <p class="values__closing">
+                    Mycelium non &egrave; solo una macchina: &egrave; un'infrastruttura tecnologica per rendere l'agricoltura
+                    pi&ugrave; autonoma, inclusiva e sostenibile nel lungo periodo &mdash; capace di rigenerare suolo, biodiversit&agrave;,
+                    produttivit&agrave; e tempo per gli agricoltori.
                 </p>
             </div>
-            <div class="product__features">
-                <div class="product__image">
-                    <img src="img/multitool.png" alt="Mycelium multiTOOL - robot autonomo per agricoltura">
-                </div>
-                <div class="product__list">
-                    <div class="product__feature">
-                        <h3>Competitivo nei costi</h3>
-                        <p>95.000&euro; per il tool e la stazione di ricarica. Leasing da ~1.250&euro;/mese o noleggio FaaS a 100&euro;/h.</p>
-                    </div>
-                    <div class="product__feature">
-                        <h3>Compatibile con strumenti standard</h3>
-                        <p>Attacco a 3 punti anteriore e posteriore, 1000 kg CAT I/II. Controllo attrezzi via ISOBUS CAN.</p>
-                    </div>
-                    <div class="product__feature">
-                        <h3>Autonomo 24/7</h3>
-                        <p>0% intervento umano durante la missione. Basta impostare la missione tramite HMI. Ritorna alla base per la ricarica.</p>
-                    </div>
-                    <div class="product__feature">
-                        <h3>Multifunzionale</h3>
-                        <p>Semina, monitoraggio, trattamenti mirati, lavorazione del terreno. Cambio attrezzi automatico.</p>
-                    </div>
-                    <div class="product__feature">
-                        <h3>Ottimizza apprendendo dai dati</h3>
-                        <p>Camere 360&deg;, connessione 4G/5G, telemetria in tempo reale, aggiornamenti OTA. Cloud learning tra aziende agricole.</p>
-                    </div>
-                    <div class="product__feature">
-                        <h3>Open Source</h3>
-                        <p>Ecosistema aperto di servizi e soluzioni condivise dalla comunit&agrave; di agricoltori.</p>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
 
-    <!-- Gen1 Specs -->
-    <section class="section specs" id="specifiche">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__label">Generation 1</span>
-                <h2 class="section__title">"The daily Golden Egg"</h2>
-            </div>
-            <div class="specs__images">
-                <img src="img/gen1-specs.png" alt="Mycelium Gen1 - specifiche tecniche">
-                <img src="img/gen1-autonomy.png" alt="Mycelium Gen1 - funzionalit&agrave; autonome in campo">
-            </div>
-            <div class="specs__grid">
-                <div class="specs__item">
-                    <span class="specs__label">Dimensioni</span>
-                    <span class="specs__value">2.5 x 0.7-1.3 x 1.4 m</span>
-                </div>
-                <div class="specs__item">
-                    <span class="specs__label">Batteria</span>
-                    <span class="specs__value">50-75 kWh LFP 100Vdc</span>
-                </div>
-                <div class="specs__item">
-                    <span class="specs__label">Motori</span>
-                    <span class="specs__value">2 x 10 kW trazione continua</span>
-                </div>
-                <div class="specs__item">
-                    <span class="specs__label">Velocit&agrave;</span>
-                    <span class="specs__value">2 - 4 km/h, missioni da 15h</span>
-                </div>
-                <div class="specs__item">
-                    <span class="specs__label">PTO</span>
-                    <span class="specs__value">18 kW continuo, 540/1000 rpm</span>
-                </div>
-                <div class="specs__item">
-                    <span class="specs__label">Pendenza</span>
-                    <span class="specs__value">Fino al 35%, bassa compattazione</span>
-                </div>
-                <div class="specs__item">
-                    <span class="specs__label">Precisione</span>
-                    <span class="specs__value">&plusmn;5 cm, raggio di sterzata 0.1 m</span>
-                </div>
-                <div class="specs__item">
-                    <span class="specs__label">Connettivit&agrave;</span>
-                    <span class="specs__value">4G/5G, OTA, stazione meteo</span>
-                </div>
-            </div>
-        </div>
+        <footer class="footer">
+            <p>marchio &copy; copyright Mycelium Lab s.r.l. &mdash; rights reserved &mdash; P.IVA 04262350368</p>
+        </footer>
     </section>
-
-    <!-- Capabilities -->
-    <section class="section capabilities">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__label">Capacit&agrave; core</span>
-                <h2 class="section__title">"From Sensing to Action"</h2>
-            </div>
-            <div class="capabilities__image">
-                <img src="img/capabilities.png" alt="Mycelium - Dal sensore all'azione: capacit&agrave; core">
-            </div>
-            <div class="capabilities__grid">
-                <div class="capabilities__item">
-                    <h3>Smart Scheduling</h3>
-                    <p>Pianifica missioni basate su energia e meteo.</p>
-                </div>
-                <div class="capabilities__item">
-                    <h3>Apprendimento collettivo</h3>
-                    <p>Condividi dati per imparare da agricoltori connessi. Cloud learning che migliora tra le aziende.</p>
-                </div>
-                <div class="capabilities__item">
-                    <h3>Operazioni selettive</h3>
-                    <p>Monitora i risultati ed esegui solo dove serve. -20/-40% input mirati.</p>
-                </div>
-                <div class="capabilities__item">
-                    <h3>Intelligenza fitosanitaria</h3>
-                    <p>Leggi la salute delle piante per migliorare la produttivit&agrave;. Outcome misurato prima/dopo.</p>
-                </div>
-                <div class="capabilities__item">
-                    <h3>Gestione agro-ecosistema</h3>
-                    <p>Gestisci sinergie tra piante e animali. Sensori multispettrali, meteo, energia.</p>
-                </div>
-                <div class="capabilities__item">
-                    <h3>Scheduler autonomo</h3>
-                    <p>Uptime 24/7 con decisioni data-driven e prevedibilit&agrave; della resa basata su dati di campo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Evolution -->
-    <section class="section evolution" id="evoluzione">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__label">Roadmap prodotto</span>
-                <h2 class="section__title">Il futuro dell'agricoltura non sono macchine pi&ugrave; grandi. Sono macchine migliori.</h2>
-            </div>
-            <div class="evolution__image">
-                <img src="img/evolution.png" alt="Evoluzione prodotto Mycelium: Gen1, Gen2, GenX">
-            </div>
-            <div class="evolution__grid">
-                <div class="evolution__stage">
-                    <h3>Gen1</h3>
-                    <p>Un tool autonomo potente. Costruito per lavorare dove le macchine tradizionali non possono.</p>
-                </div>
-                <div class="evolution__stage">
-                    <h3>Gen2</h3>
-                    <p>Un sistema modulare. Pi&ugrave; piccolo, pi&ugrave; intelligente, progettato per muoversi <em>nel</em> paesaggio, non sopra di esso.</p>
-                </div>
-                <div class="evolution__stage">
-                    <h3>GenX</h3>
-                    <p>Una presenza silenziosa nel campo. Preciso, adattivo, quasi invisibile. Tecnologia che lavora <em>con</em> la natura.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Model -->
-    <section class="section business">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__label">Modello di business</span>
-                <h2 class="section__title">Modello di scalabilit&agrave;</h2>
-            </div>
-            <div class="business__image">
-                <img src="img/business-model.png" alt="Modello di scalabilit&agrave; Mycelium">
-            </div>
-            <div class="business__grid">
-                <div class="business__item">
-                    <h3>Vendita MyceliumOS tool</h3>
-                    <p>95.000&euro; il tool + stazione di ricarica. 600&euro;/anno abbonamento piattaforma.</p>
-                </div>
-                <div class="business__item">
-                    <h3>Fleet-as-a-Service</h3>
-                    <p>Controllo da remoto delle operazioni. Noleggio con operatore a 100&euro;/h.</p>
-                </div>
-                <div class="business__item">
-                    <h3>Light SaaS</h3>
-                    <p>Connettivit&agrave;, OTA e dashboard dati. Ottimizzazione dell'efficienza.</p>
-                </div>
-                <div class="business__item">
-                    <h3>Marketplace & Academy</h3>
-                    <p>5-15% sulle soluzioni vendute dal network. Corsi e certificazioni Mycelium Academy.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta" id="contatti">
-        <div class="container">
-            <div class="cta__content">
-                <h2 class="cta__title">Mycelium apre la strada a un futuro agricolo sostenibile e autonomo</h2>
-                <p class="cta__text">
-                    Unisciti a noi nel rivoluzionare l'agricoltura. Insieme possiamo costruire sistemi agricoli
-                    resilienti, ridurre l'impatto ambientale e promuovere un ecosistema di tecnologia e pratiche rigenerative.
-                </p>
-                <div class="cta__info">
-                    <p>Viale Virgilio, 50/C, 41123 Modena MO</p>
-                </div>
-                <a href="mailto:info@myceliumlab.it" class="btn btn--primary btn--large">
-                    info@myceliumlab.it
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <a href="#" class="nav__logo">
-                        <svg class="nav__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="20" cy="20" r="3" fill="currentColor"/>
-                            <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.7"/>
-                            <circle cx="30" cy="10" r="2" fill="currentColor" opacity="0.7"/>
-                            <circle cx="10" cy="30" r="2" fill="currentColor" opacity="0.7"/>
-                            <circle cx="30" cy="30" r="2" fill="currentColor" opacity="0.7"/>
-                            <line x1="20" y1="20" x2="10" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
-                            <line x1="20" y1="20" x2="30" y2="10" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
-                            <line x1="20" y1="20" x2="10" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
-                            <line x1="20" y1="20" x2="30" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
-                        </svg>
-                        <span>Mycelium</span>
-                    </a>
-                    <p class="footer__tagline">Tool elettrico autonomo per l'agricoltura sostenibile e connessa.</p>
-                </div>
-                <div class="footer__links">
-                    <h4>Esplora</h4>
-                    <ul>
-                        <li><a href="#perche">Perch&eacute;</a></li>
-                        <li><a href="#visione">Visione</a></li>
-                        <li><a href="#prodotto">Prodotto</a></li>
-                        <li><a href="#evoluzione">Evoluzione</a></li>
-                    </ul>
-                </div>
-                <div class="footer__links">
-                    <h4>Contatti</h4>
-                    <ul>
-                        <li><a href="mailto:info@myceliumlab.it">info@myceliumlab.it</a></li>
-                        <li>Viale Virgilio, 50/C</li>
-                        <li>41123 Modena MO, Italia</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2026 Mycelium S.r.l. — Startup Innovativa — Tutti i diritti riservati.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
