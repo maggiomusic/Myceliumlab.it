@@ -464,18 +464,25 @@ button { font-family: inherit; }
 
 .node__detail {
     max-width: 720px;
-    margin: 0 auto 48px;
-    padding: 28px 32px;
+    margin: 0 auto;
+    padding: 0 32px;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 16px;
-    min-height: 140px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s var(--ease-out), opacity 0.4s var(--ease-out), padding 0.4s var(--ease-out), margin 0.4s var(--ease-out), border-color 0.3s;
+    border-color: transparent;
 }
 
 .node__detail.is-populated {
+    max-height: 520px;
+    opacity: 1;
+    padding: 28px 32px;
+    margin: 0 auto 48px;
     border-color: var(--color-accent);
-    box-shadow: 0 20px 60px rgba(236, 26, 163, 0.08);
+    box-shadow: 0 20px 60px rgba(236, 26, 163, 0.12);
 }
 
 .node__detail-inner h3 {
@@ -506,7 +513,57 @@ button { font-family: inherit; }
     font-style: italic;
 }
 
-.node__cta { text-align: center; }
+.node__cta { text-align: center; padding-top: 16px; }
+
+/* ---- Interactive CTA: shine + arrow slide + idle pulse ---- */
+.btn--cta {
+    position: relative;
+    overflow: hidden;
+    gap: 12px;
+    animation: ctaPulse 2.6s ease-in-out infinite;
+}
+
+.btn--cta .btn__label { position: relative; z-index: 2; }
+
+.btn--cta .btn__arrow {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    font-size: 1.15em;
+    transition: transform 0.35s var(--ease-out);
+}
+
+.btn--cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 75%);
+    transform: translateX(-130%);
+    transition: transform 0.7s var(--ease-out);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.btn--cta:hover {
+    animation-play-state: paused;
+    transform: translateY(-2px);
+}
+
+.btn--cta:hover::before { transform: translateX(130%); }
+
+.btn--cta:hover .btn__arrow { transform: translateX(8px); }
+
+@keyframes ctaPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 1px var(--color-accent), 0 10px 40px var(--color-accent-glow), 0 0 0 0 rgba(236, 26, 163, 0.45);
+    }
+    50% {
+        box-shadow: 0 0 0 1px var(--color-accent), 0 14px 50px rgba(236, 26, 163, 0.5), 0 0 0 12px rgba(236, 26, 163, 0);
+    }
+}
 
 /* ========================================
    3. APPLICAZIONI (horizontal scroll)
