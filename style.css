@@ -472,7 +472,19 @@ button { font-family: inherit; }
     line-height: 1.7;
 }
 
+.node__detail-inner p + p { margin-top: 10px; }
+
 .node__detail-inner strong { color: var(--color-text); font-weight: 600; }
+
+.node__disclaimer {
+    margin-top: 16px !important;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem !important;
+    line-height: 1.55 !important;
+    color: var(--color-text-muted) !important;
+    font-style: italic;
+}
 
 .node__cta { text-align: center; }
 
