@@ -79,10 +79,11 @@ button { font-family: inherit; }
 }
 
 .sidenav__net line {
-    stroke: var(--color-border-light);
+    stroke: rgba(255, 255, 255, 0.55);
     stroke-width: 1;
     stroke-dasharray: 3 4;
-    opacity: 0.6;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.7));
 }
 
 .sidenav__list {
@@ -99,17 +100,21 @@ button { font-family: inherit; }
     gap: 14px;
     font-size: 0.8125rem;
     font-weight: 500;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.78);
     letter-spacing: 0.04em;
     transition: color 0.3s var(--ease-out);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .sidenav__node {
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    background: var(--color-bg);
-    border: 1.5px solid var(--color-border-light);
+    background: rgba(10, 10, 13, 0.7);
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 3px rgba(10, 10, 13, 0.45), 0 0 8px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     transition: all 0.3s var(--ease-out);
     flex-shrink: 0;
     position: relative;
@@ -120,6 +125,12 @@ button { font-family: inherit; }
     opacity: 0;
     transform: translateX(-6px);
     transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+    background: rgba(10, 10, 13, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 4px 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sidenav:hover .sidenav__label,
@@ -128,10 +139,11 @@ button { font-family: inherit; }
     transform: translateX(0);
 }
 
-.sidenav__link:hover { color: var(--color-text); }
+.sidenav__link:hover { color: #fff; }
 .sidenav__link:hover .sidenav__node {
     border-color: var(--color-accent);
-    box-shadow: 0 0 12px var(--color-accent-glow);
+    background: rgba(236, 26, 163, 0.25);
+    box-shadow: 0 0 0 3px rgba(10, 10, 13, 0.45), 0 0 18px var(--color-accent-glow);
 }
 
 .sidenav__link.is-active {
@@ -140,8 +152,8 @@ button { font-family: inherit; }
 
 .sidenav__link.is-active .sidenav__node {
     background: var(--color-accent);
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 4px rgba(236, 26, 163, 0.15), 0 0 18px var(--color-accent-glow);
+    border-color: #fff;
+    box-shadow: 0 0 0 4px rgba(10, 10, 13, 0.55), 0 0 22px var(--color-accent-glow);
 }
 
 /* Mobile nav toggle */
