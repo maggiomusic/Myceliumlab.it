@@ -267,25 +267,54 @@ button { font-family: inherit; }
    ======================================== */
 
 .home {
-    justify-content: space-between;
-    align-items: stretch;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    text-align: center;
+    padding: 0;
+    min-height: 100vh;
 }
 
-.home__top {
+.home__hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.home__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        radial-gradient(circle at 50% 45%, rgba(10, 10, 13, 0.35) 0%, rgba(10, 10, 13, 0.7) 80%),
+        linear-gradient(180deg, rgba(10, 10, 13, 0.55) 0%, rgba(10, 10, 13, 0.2) 50%, rgba(10, 10, 13, 0.85) 100%);
+}
+
+.home__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 32px;
+    max-width: 880px;
 }
 
 .home__logo {
-    width: 140px;
-    height: 140px;
+    width: clamp(140px, 18vw, 220px);
+    height: clamp(140px, 18vw, 220px);
     object-fit: contain;
-    filter: drop-shadow(0 0 40px var(--color-accent-glow));
 }
 
 .home__logo--pulse {
@@ -295,54 +324,32 @@ button { font-family: inherit; }
 @keyframes logoPulse {
     0%, 100% {
         transform: scale(1);
-        filter: drop-shadow(0 0 20px rgba(236, 26, 163, 0.25));
+        filter: drop-shadow(0 0 30px rgba(236, 26, 163, 0.35));
     }
     50% {
-        transform: scale(1.05);
-        filter: drop-shadow(0 0 50px rgba(236, 26, 163, 0.55));
+        transform: scale(1.06);
+        filter: drop-shadow(0 0 70px rgba(236, 26, 163, 0.75));
     }
-}
-
-.home__wordmark {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.4em;
-    color: var(--color-text);
-    padding-left: 0.4em;
-}
-
-.home__center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    padding: 40px 0;
-}
-
-.home__image {
-    max-width: min(820px, 90%);
-    width: 100%;
-    height: auto;
-    border-radius: 18px;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.55), 0 0 80px rgba(236, 26, 163, 0.08);
 }
 
 .home__tagline {
     font-family: var(--font-heading);
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    letter-spacing: -0.01em;
-    max-width: 640px;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.55);
+    margin: 0;
 }
 
 .home__copyright {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    right: 32px;
+    font-size: 0.7rem;
+    color: rgba(244, 244, 246, 0.7);
     letter-spacing: 0.06em;
     text-align: right;
 }
@@ -909,9 +916,14 @@ button { font-family: inherit; }
 
     .mobilenav__toggle { display: flex; }
 
-    .home__logo { width: 110px; height: 110px; }
-    .home__wordmark { font-size: 1.2rem; letter-spacing: 0.3em; }
-    .home__copyright { text-align: center; font-size: 0.7rem; }
+    .home__copyright {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        text-align: center;
+        font-size: 0.65rem;
+    }
 
     .node__stage {
         aspect-ratio: 4 / 5;
