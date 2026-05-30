@@ -573,102 +573,67 @@ button { font-family: inherit; }
 
 .apps {
     position: relative;
-    max-width: 1280px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 60px;
 }
 
 .apps__rail {
     display: flex;
-    gap: 24px;
+    gap: 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding-bottom: 16px;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-accent) var(--color-bg-alt);
+    scrollbar-width: none;
+    border-radius: 18px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(236, 26, 163, 0.08);
 }
 
-.apps__rail::-webkit-scrollbar { height: 6px; }
-.apps__rail::-webkit-scrollbar-track { background: var(--color-bg-alt); border-radius: 3px; }
-.apps__rail::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 3px; }
+.apps__rail::-webkit-scrollbar { display: none; }
 
 .apps__item {
-    flex: 0 0 380px;
+    flex: 0 0 100%;
     scroll-snap-align: start;
     background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s var(--ease-out);
-}
-
-.apps__item:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-4px);
+    display: block;
 }
 
 .apps__item img {
     width: 100%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
+    display: block;
 }
 
-.apps__caption {
-    padding: 20px 22px 24px;
+.apps__dots {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
 }
 
-.apps__caption span {
-    font-family: var(--font-heading);
-    font-size: 0.7rem;
-    color: var(--color-accent);
-    letter-spacing: 0.2em;
-    font-weight: 500;
-}
-
-.apps__caption h3 {
-    font-family: var(--font-heading);
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--color-text);
-}
-
-.apps__caption p {
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.apps__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
+.apps__dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-    font-size: 1.2rem;
+    background: var(--color-border-light);
+    border: none;
     cursor: pointer;
-    z-index: 5;
+    padding: 0;
     transition: all 0.3s var(--ease-out);
 }
 
-.apps__arrow:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    box-shadow: 0 0 24px var(--color-accent-glow);
+.apps__dot:hover {
+    background: var(--color-accent-soft);
 }
 
-.apps__arrow--left  { left: 0; }
-.apps__arrow--right { right: 0; }
+.apps__dot.is-active {
+    background: var(--color-accent);
+    width: 24px;
+    border-radius: 100px;
+    box-shadow: 0 0 12px var(--color-accent-glow);
+}
 
 /* ========================================
    4. VIENI A VISITARCI

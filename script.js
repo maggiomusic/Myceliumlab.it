@@ -52,20 +52,69 @@ bullets.forEach(btn => {
     });
 });
 
-// --- Applicazioni horizontal scroller ---
+// --- Applicazioni: auto-advancing single-image gallery ---
 const appsRail = document.getElementById('appsRail');
-const appsPrev = document.getElementById('appsPrev');
-const appsNext = document.getElementById('appsNext');
+const appsDots = document.getElementById('appsDots');
 
-function scrollApps(direction) {
-    if (!appsRail) return;
-    const first = appsRail.querySelector('.apps__item');
-    const step = first ? first.getBoundingClientRect().width + 24 : 400;
-    appsRail.scrollBy({ left: direction * step, behavior: 'smooth' });
+if (appsRail) {
+    const items = Array.from(appsRail.querySelectorAll('.apps__item'));
+    let currentIdx = 0;
+    let paused = false;
+
+    // Build pagination dots
+    if (appsDots) {
+        items.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'apps__dot' + (i === 0 ? ' is-active' : '');
+            dot.setAttribute('aria-label', `Vai a immagine ${i + 1}`);
+            dot.addEventListener('click', () => goTo(i));
+            appsDots.appendChild(dot);
+        });
+    }
+
+    function goTo(i) {
+        currentIdx = (i + items.length) % items.length;
+        const item = items[currentIdx];
+        if (!item) return;
+        appsRail.scrollTo({ left: item.offsetLeft, behavior: 'smooth' });
+        if (appsDots) {
+            appsDots.querySelectorAll('.apps__dot').forEach((d, idx) => {
+                d.classList.toggle('is-active', idx === currentIdx);
+            });
+        }
+    }
+
+    function advance() {
+        if (paused) return;
+        goTo(currentIdx + 1);
+    }
+
+    setInterval(advance, 4500);
+
+    // Pause on hover / focus, resume on leave
+    ['mouseenter', 'focusin'].forEach(ev =>
+        appsRail.addEventListener(ev, () => paused = true));
+    ['mouseleave', 'focusout'].forEach(ev =>
+        appsRail.addEventListener(ev, () => paused = false));
+
+    // Sync dots when user scrolls manually (swipe / scrollbar)
+    let scrollDebounce;
+    appsRail.addEventListener('scroll', () => {
+        clearTimeout(scrollDebounce);
+        scrollDebounce = setTimeout(() => {
+            const closest = items.reduce((best, el, i) => {
+                const d = Math.abs(el.offsetLeft - appsRail.scrollLeft);
+                return d < best.d ? { d, i } : best;
+            }, { d: Infinity, i: 0 });
+            currentIdx = closest.i;
+            if (appsDots) {
+                appsDots.querySelectorAll('.apps__dot').forEach((d, idx) => {
+                    d.classList.toggle('is-active', idx === currentIdx);
+                });
+            }
+        }, 120);
+    });
 }
-
-appsPrev?.addEventListener('click', () => scrollApps(-1));
-appsNext?.addEventListener('click', () => scrollApps(1));
 
 // --- Contact form: open mail client with prefilled message ---
 const contactForm = document.getElementById('contactForm');
@@ -87,7 +136,7 @@ contactForm?.addEventListener('submit', (e) => {
 const revealEls = document.querySelectorAll(
     '.page__header, .home__center, .home__copyright, ' +
     '.node__stage, .node__detail, .node__cta, ' +
-    '.apps, .visit__grid > *, .values__grid > *, .footer'
+    '.apps, .visit__grid > *, .values__hero, .values__block, .values__closing, .footer'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
