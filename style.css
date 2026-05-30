@@ -814,6 +814,28 @@ button { font-family: inherit; }
     display: block;
 }
 
+.values__story {
+    max-width: 800px;
+    margin: 0 auto 56px;
+    padding: 26px 32px;
+    border-left: 2px solid var(--color-accent);
+    background: linear-gradient(135deg, rgba(236, 26, 163, 0.06), transparent 80%);
+    border-radius: 0 12px 12px 0;
+}
+
+.values__story p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.values__story p + p { margin-top: 14px; }
+
+.values__story strong {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
 .values__columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
