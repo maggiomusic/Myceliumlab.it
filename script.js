@@ -120,7 +120,7 @@ if (appsRail) {
 const revealEls = document.querySelectorAll(
     '.page__header, .home__center, .home__copyright, ' +
     '.node__stage, .node__detail, .node__cta, ' +
-    '.apps, .visit__image, .visit__info, .values__hero, .values__intro, .values__founder, .values__outro, .footer'
+    '.apps, .visit__image, .visit__info, .values__hero, .values__story, .values__block, .values__closing, .footer'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
