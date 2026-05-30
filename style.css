@@ -740,18 +740,39 @@ button { font-family: inherit; }
 .visit__contacts {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
 }
 
 .visit__contacts li {
     display: flex;
-    align-items: baseline;
-    gap: 20px;
-    padding: 10px 0;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 6px;
     border-bottom: 1px solid var(--color-border);
+    transition: padding-left 0.3s var(--ease-out);
 }
 
 .visit__contacts li:last-child { border-bottom: none; }
+
+.visit__contacts li:hover { padding-left: 12px; }
+
+.visit__contact-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 8px var(--color-accent-glow));
+    transition: transform 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+
+.visit__contacts li:hover .visit__contact-icon {
+    transform: scale(1.12);
+}
+
+.visit__contacts-item--whatsapp:hover .visit__contact-icon {
+    color: #25d366;
+    filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.55));
+}
 
 .visit__contacts span {
     font-family: var(--font-heading);
@@ -759,16 +780,19 @@ button { font-family: inherit; }
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    min-width: 70px;
+    min-width: 86px;
 }
 
 .visit__contacts a {
     color: var(--color-text);
     font-size: 0.9375rem;
     transition: color 0.3s;
+    overflow-wrap: anywhere;
 }
 
 .visit__contacts a:hover { color: var(--color-accent); }
+
+.visit__contacts-item--whatsapp a:hover { color: #25d366; }
 
 
 /* ========================================
