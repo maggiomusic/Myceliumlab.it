@@ -639,49 +639,35 @@ button { font-family: inherit; }
    4. VIENI A VISITARCI
    ======================================== */
 
-.visit__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    max-width: 1200px;
+.visit__stack {
+    max-width: 1100px;
     margin: 0 auto;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 }
 
 .visit__image {
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid var(--color-border);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
-    position: sticky;
-    top: 80px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55), 0 0 60px rgba(236, 26, 163, 0.08);
 }
 
-.visit__image img { width: 100%; height: auto; display: block; }
+.visit__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-.visit__body {
+.visit__info {
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 22px;
 }
-
-.visit__block h3 {
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: 14px;
-    font-weight: 500;
-}
-
-.visit__block p {
-    color: var(--color-text-secondary);
-    font-size: 1rem;
-    line-height: 1.7;
-}
-
-.visit__block strong { color: var(--color-text); }
 
 /* ---- Address card with map icon ---- */
 .visit__address {
@@ -784,71 +770,6 @@ button { font-family: inherit; }
 
 .visit__contacts a:hover { color: var(--color-accent); }
 
-.visit__form {
-    padding: 32px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.visit__form h3 {
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 500;
-}
-
-.visit__field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.visit__field label {
-    font-size: 0.8125rem;
-    color: var(--color-text-secondary);
-}
-
-.visit__field input {
-    padding: 12px 16px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    color: var(--color-text);
-    font-family: inherit;
-    font-size: 0.9375rem;
-    transition: border-color 0.3s;
-}
-
-.visit__field input:focus {
-    outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(236, 26, 163, 0.12);
-}
-
-.visit__form .btn { align-self: flex-start; }
-
-.visit__story {
-    padding: 28px;
-    border-left: 2px solid var(--color-accent);
-    background: var(--color-surface);
-    border-radius: 0 12px 12px 0;
-}
-
-.visit__story p {
-    color: var(--color-text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.8;
-}
-
-.visit__story p + p { margin-top: 14px; }
-
-.visit__story strong { color: var(--color-accent); font-weight: 600; }
 
 /* ========================================
    5. I NOSTRI VALORI
@@ -983,17 +904,6 @@ button { font-family: inherit; }
    ======================================== */
 
 @media (max-width: 1024px) {
-    .visit__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .visit__image {
-        position: relative;
-        top: 0;
-        max-width: 640px;
-        margin: 0 auto;
-    }
-
     .values__columns {
         grid-template-columns: 1fr;
     }
@@ -1064,8 +974,6 @@ button { font-family: inherit; }
     .apps__arrow { display: none; }
     .apps__item { flex: 0 0 84%; }
 
-    .visit__form { padding: 24px; }
-
     .visit__address {
         flex-wrap: wrap;
         gap: 14px;
@@ -1076,4 +984,6 @@ button { font-family: inherit; }
         width: 100%;
         text-align: right;
     }
+
+    .visit__stack { gap: 32px; }
 }

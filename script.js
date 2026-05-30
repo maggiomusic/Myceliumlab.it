@@ -116,27 +116,11 @@ if (appsRail) {
     });
 }
 
-// --- Contact form: open mail client with prefilled message ---
-const contactForm = document.getElementById('contactForm');
-
-contactForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('senderEmail').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    if (!email || !subject) return;
-
-    const body = encodeURIComponent(
-        `Buongiorno,\n\nVi scrivo da ${email} per la seguente richiesta:\n\n[scrivi qui il tuo messaggio]\n\nGrazie.\n`
-    );
-    const to = 'federico@myceliumlab.it';
-    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
-});
-
 // --- Scroll reveal ---
 const revealEls = document.querySelectorAll(
     '.page__header, .home__center, .home__copyright, ' +
     '.node__stage, .node__detail, .node__cta, ' +
-    '.apps, .visit__grid > *, .values__hero, .values__block, .values__closing, .footer'
+    '.apps, .visit__image, .visit__info, .values__hero, .values__block, .values__closing, .footer'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
