@@ -683,6 +683,74 @@ button { font-family: inherit; }
 
 .visit__block strong { color: var(--color-text); }
 
+/* ---- Address card with map icon ---- */
+.visit__address {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    color: var(--color-text);
+    transition: all 0.3s var(--ease-out);
+    text-decoration: none;
+}
+
+.visit__address:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(236, 26, 163, 0.15);
+}
+
+.visit__map-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 12px var(--color-accent-glow));
+    transition: transform 0.3s var(--ease-out);
+}
+
+.visit__address:hover .visit__map-icon {
+    transform: scale(1.08) translateY(-2px);
+}
+
+.visit__address-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.4;
+}
+
+.visit__address-text strong {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.visit__address-text > span {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+}
+
+.visit__address-cta {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.visit__address:hover .visit__address-cta {
+    transform: translateX(4px);
+}
+
 .visit__contacts {
     display: flex;
     flex-direction: column;
@@ -997,4 +1065,15 @@ button { font-family: inherit; }
     .apps__item { flex: 0 0 84%; }
 
     .visit__form { padding: 24px; }
+
+    .visit__address {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .visit__address-cta {
+        width: 100%;
+        text-align: right;
+    }
 }

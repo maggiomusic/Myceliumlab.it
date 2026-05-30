@@ -36,8 +36,8 @@
             <li><a href="#applicazioni" class="sidenav__link" data-target="applicazioni">
                 <span class="sidenav__node"></span><span class="sidenav__label">Applicazioni</span>
             </a></li>
-            <li><a href="#vieni" class="sidenav__link" data-target="vieni">
-                <span class="sidenav__node"></span><span class="sidenav__label">Vieni a visitarci</span>
+            <li><a href="#contatti" class="sidenav__link" data-target="contatti">
+                <span class="sidenav__node"></span><span class="sidenav__label">Contatti</span>
             </a></li>
         </ul>
     </aside>
@@ -205,7 +205,7 @@
             </template>
 
             <div class="node__cta">
-                <a href="#vieni" class="btn btn--primary btn--large btn--cta">
+                <a href="#contatti" class="btn btn--primary btn--large btn--cta">
                     <span class="btn__label">Richiedi una demo</span>
                     <span class="btn__arrow" aria-hidden="true">&rarr;</span>
                 </a>
@@ -239,11 +239,11 @@
     </section>
 
     <!-- =====================================================
-         5. VIENI A VISITARCI
+         5. CONTATTI
          ===================================================== -->
-    <section class="page visit" id="vieni">
+    <section class="page visit" id="contatti">
         <header class="page__header">
-            <h2 class="page__title">Vieni a visitarci</h2>
+            <h2 class="page__title">Contatti</h2>
         </header>
 
         <div class="visit__grid">
@@ -252,20 +252,26 @@
             </div>
 
             <div class="visit__body">
-                <div class="visit__block">
-                    <h3>Dove siamo</h3>
-                    <p>Mycelium Lab s.r.l. &mdash; sito produttivo in <strong>Viale Virgilio 50, 41123 Modena</strong>.<br>
-                       Oppure richiedi una demo: indicaci dove e veniamo a mostrartelo in azione.</p>
-                </div>
+                <a class="visit__address"
+                   href="https://www.google.com/maps/search/?api=1&amp;query=Viale+Virgilio+50,+41123+Modena"
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Apri sede in Google Maps">
+                    <svg class="visit__map-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.5 11.5 7.3 12.3a1 1 0 0 0 1.4 0C13.5 21.5 20 15.25 20 10c0-4.42-3.58-8-8-8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.7"/>
+                    </svg>
+                    <span class="visit__address-text">
+                        <strong>Mycelium Lab s.r.l.</strong>
+                        <span>Sede Viale Virgilio 50, 41123 Modena</span>
+                    </span>
+                    <span class="visit__address-cta" aria-hidden="true">Apri in Mappe &rarr;</span>
+                </a>
 
-                <div class="visit__block">
-                    <h3>Contatti</h3>
-                    <ul class="visit__contacts">
-                        <li><span>Telefono</span><a href="tel:+393464734538">+39 346 4734538</a></li>
-                        <li><span>PEC</span><a href="mailto:myceliumlab@pec.it">myceliumlab@pec.it</a></li>
-                        <li><span>Email</span><a href="mailto:federico@myceliumlab.it">federico@myceliumlab.it</a></li>
-                    </ul>
-                </div>
+                <ul class="visit__contacts">
+                    <li><span>Telefono</span><a href="tel:+393464734538">+39 346 4734538</a></li>
+                    <li><span>PEC</span><a href="mailto:myceliumlab@pec.it">myceliumlab@pec.it</a></li>
+                    <li><span>Email</span><a href="mailto:federico@myceliumlab.it">federico@myceliumlab.it</a></li>
+                </ul>
 
                 <form class="visit__form" id="contactForm" novalidate>
                     <h3>Scrivici</h3>
