@@ -814,22 +814,24 @@ button { font-family: inherit; }
     display: block;
 }
 
-.values__story {
-    max-width: 800px;
-    margin: 0 auto 56px;
-    padding: 26px 32px;
-    border-left: 2px solid var(--color-accent);
-    background: linear-gradient(135deg, rgba(236, 26, 163, 0.06), transparent 80%);
-    border-radius: 0 12px 12px 0;
+.values__intro {
+    max-width: 760px;
+    margin: -32px auto 56px;
+    text-align: center;
 }
 
-.values__story p {
+.values__intro p {
     color: var(--color-text-secondary);
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.75;
 }
 
-.values__story p + p { margin-top: 14px; }
+.values__intro p + p { margin-top: 14px; }
+
+.values__intro strong {
+    color: var(--color-accent);
+    font-weight: 600;
+}
 
 .values__columns {
     display: grid;
