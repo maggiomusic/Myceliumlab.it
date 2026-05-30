@@ -758,19 +758,19 @@ button { font-family: inherit; }
 
 .visit__contact-icon {
     flex-shrink: 0;
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     color: var(--color-accent);
-    filter: drop-shadow(0 0 8px var(--color-accent-glow));
-    transition: transform 0.3s var(--ease-out), color 0.3s var(--ease-out);
+    filter: drop-shadow(0 0 6px var(--color-accent-glow));
+    transition: transform 0.3s var(--ease-out), stroke 0.3s var(--ease-out), fill 0.3s var(--ease-out);
 }
 
 .visit__contacts li:hover .visit__contact-icon {
-    transform: scale(1.12);
+    transform: scale(1.15);
 }
 
-.visit__contacts-item--whatsapp:hover .visit__contact-icon {
-    color: #25d366;
+.visit__contacts-item--whatsapp:hover .visit__contact-icon[fill="#ec1aa3"] {
+    fill: #25d366;
     filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.55));
 }
 
