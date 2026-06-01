@@ -598,7 +598,9 @@ button { font-family: inherit; }
     flex: 0 0 100%;
     scroll-snap-align: start;
     background: var(--color-surface);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .apps__item img {
@@ -606,6 +608,23 @@ button { font-family: inherit; }
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
+}
+
+.apps__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 28px 24px;
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.01em;
+    text-align: center;
+    background: linear-gradient(to top, rgba(10, 10, 13, 0.85) 0%, rgba(10, 10, 13, 0.55) 60%, transparent 100%);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 .apps__dots {
