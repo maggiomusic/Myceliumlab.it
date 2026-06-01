@@ -1019,6 +1019,31 @@ button { font-family: inherit; }
 
     .mobilenav__toggle { display: flex; }
 
+    /* HOME: image scales (contain) instead of being cropped on narrow viewports */
+    .home__hero {
+        background: var(--color-bg);
+    }
+
+    .home__bg {
+        object-fit: contain;
+        object-position: center bottom;
+        background-color: var(--color-bg);
+    }
+
+    .home__overlay {
+        background: linear-gradient(180deg,
+            rgba(10, 10, 13, 0.65) 0%,
+            rgba(10, 10, 13, 0.15) 35%,
+            rgba(10, 10, 13, 0) 60%,
+            rgba(10, 10, 13, 0.75) 100%);
+    }
+
+    .home__content {
+        padding-top: 90px;
+        padding-bottom: 60px;
+        gap: 14px;
+    }
+
     .home__copyright {
         position: absolute;
         bottom: 16px;
@@ -1028,18 +1053,34 @@ button { font-family: inherit; }
         font-size: 0.65rem;
     }
 
-    .node__stage {
-        aspect-ratio: 4 / 5;
+    /* Caratteristiche: tighter spacing on mobile */
+    .node__labels {
+        gap: 10px 12px;
     }
 
-    .node__name {
-        font-size: 0.65rem;
-        padding: 3px 8px;
+    .node__labels--top { margin-bottom: 24px; }
+    .node__labels--bottom { margin-top: 24px; }
+
+    .node__label {
+        font-size: 0.75rem;
+        padding: 9px 16px;
+        letter-spacing: 0.06em;
+    }
+
+    /* Popup tighter on mobile */
+    .node__popup {
+        padding: 24px 22px 22px;
+        width: min(440px, 92%);
+        max-height: 86vh;
+    }
+
+    .node__popup-content h3 {
+        font-size: 1.125rem;
+        margin-right: 36px;
     }
 
     .apps { padding: 0 12px; }
-    .apps__arrow { display: none; }
-    .apps__item { flex: 0 0 84%; }
+    .apps__item { flex: 0 0 100%; }
 
     .visit__address {
         flex-wrap: wrap;
