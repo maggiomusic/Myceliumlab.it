@@ -120,7 +120,7 @@
             </header>
 
             <div class="node__stage">
-                <img src="img/Mycelium lato.png" alt="Mycelium &mdash; vista laterale" class="node__image">
+                <img src="img/node.png" alt="Mycelium Node nello showroom" class="node__image">
 
                 <!-- Pallini cliccabili -->
                 <div class="node__bullets">
@@ -155,10 +155,14 @@
                         <span class="node__dot"></span><span class="node__name">Prezzo</span>
                     </button>
                 </div>
-            </div>
 
-            <!-- Spec detail panel (hidden until a bullet is clicked) -->
-            <div class="node__detail" id="nodeDetail" role="region" aria-live="polite"></div>
+                <!-- Spec popup (shown on bullet click) -->
+                <div class="node__backdrop" id="nodeBackdrop" aria-hidden="true"></div>
+                <div class="node__popup" id="nodePopup" role="dialog" aria-modal="true" aria-hidden="true">
+                    <button class="node__popup-close" id="nodePopupClose" aria-label="Chiudi">&times;</button>
+                    <div class="node__popup-content"></div>
+                </div>
+            </div>
 
             <!-- Spec content (hidden, used by JS) -->
             <template id="nodeSpecs">

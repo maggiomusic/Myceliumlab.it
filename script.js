@@ -31,25 +31,46 @@ const spy = new IntersectionObserver((entries) => {
 
 sections.forEach(s => spy.observe(s));
 
-// --- Mycelium Node: clickable bullets ---
+// --- Mycelium Node: clickable bullets open a popup ---
 const bullets = document.querySelectorAll('.node__bullet');
-const detailPanel = document.getElementById('nodeDetail');
+const popup = document.getElementById('nodePopup');
+const popupContent = popup?.querySelector('.node__popup-content');
+const popupClose = document.getElementById('nodePopupClose');
+const backdrop = document.getElementById('nodeBackdrop');
 const specsTemplate = document.getElementById('nodeSpecs');
 
+function openPopup(specEl) {
+    if (!popup || !popupContent) return;
+    popupContent.innerHTML = '';
+    Array.from(specEl.children).forEach(child => popupContent.appendChild(child.cloneNode(true)));
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+    backdrop?.classList.add('is-open');
+}
+
+function closePopup() {
+    if (!popup) return;
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    backdrop?.classList.remove('is-open');
+    bullets.forEach(b => b.classList.remove('is-active'));
+}
+
 bullets.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const spec = btn.dataset.spec;
         bullets.forEach(b => b.classList.toggle('is-active', b === btn));
-
         const node = specsTemplate.content.querySelector(`[data-spec="${spec}"]`);
-        if (!node) return;
-
-        const clone = node.cloneNode(true);
-        detailPanel.innerHTML = '';
-        detailPanel.appendChild(clone);
-        detailPanel.classList.add('is-populated');
-        detailPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        if (node) openPopup(node);
     });
+});
+
+popupClose?.addEventListener('click', closePopup);
+backdrop?.addEventListener('click', closePopup);
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup?.classList.contains('is-open')) closePopup();
 });
 
 // --- Applicazioni: auto-advancing single-image gallery ---
