@@ -381,13 +381,14 @@ button { font-family: inherit; }
 
 .node__stage {
     position: relative;
-    max-width: 880px;
+    max-width: 1100px;
     margin: 0 auto;
     aspect-ratio: 16 / 9;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 18px;
     overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(236, 26, 163, 0.08);
 }
 
 .node__image {
@@ -399,7 +400,7 @@ button { font-family: inherit; }
 }
 
 .node__labels {
-    max-width: 880px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
