@@ -31,8 +31,8 @@ const spy = new IntersectionObserver((entries) => {
 
 sections.forEach(s => spy.observe(s));
 
-// --- Mycelium Node: clickable bullets open a popup ---
-const bullets = document.querySelectorAll('.node__bullet');
+// --- Mycelium Node: label click opens a full-screen popup ---
+const nodeLabels = document.querySelectorAll('.node__label');
 const popup = document.getElementById('nodePopup');
 const popupContent = popup?.querySelector('.node__popup-content');
 const popupClose = document.getElementById('nodePopupClose');
@@ -46,6 +46,7 @@ function openPopup(specEl) {
     popup.classList.add('is-open');
     popup.setAttribute('aria-hidden', 'false');
     backdrop?.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
 }
 
 function closePopup() {
@@ -53,14 +54,15 @@ function closePopup() {
     popup.classList.remove('is-open');
     popup.setAttribute('aria-hidden', 'true');
     backdrop?.classList.remove('is-open');
-    bullets.forEach(b => b.classList.remove('is-active'));
+    nodeLabels.forEach(l => l.classList.remove('is-active'));
+    document.body.style.overflow = '';
 }
 
-bullets.forEach(btn => {
+nodeLabels.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const spec = btn.dataset.spec;
-        bullets.forEach(b => b.classList.toggle('is-active', b === btn));
+        nodeLabels.forEach(l => l.classList.toggle('is-active', l === btn));
         const node = specsTemplate.content.querySelector(`[data-spec="${spec}"]`);
         if (node) openPopup(node);
     });
@@ -140,7 +142,7 @@ if (appsRail) {
 // --- Scroll reveal ---
 const revealEls = document.querySelectorAll(
     '.page__header, .home__center, .home__copyright, ' +
-    '.node__stage, .node__detail, .node__cta, ' +
+    '.node__stage, .node__labels, .node__cta, ' +
     '.apps, .visit__image, .visit__info, .values__hero, .values__block, .values__closing, .footer'
 );
 revealEls.forEach(el => el.classList.add('reveal'));

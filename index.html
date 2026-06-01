@@ -116,52 +116,27 @@
         <div class="node__inner">
             <header class="page__header">
                 <h2 class="page__title">Mycelium <span class="accent">Node</span></h2>
-                <p class="page__lead">Tocca i nodi magenta intorno al robot per esplorarne le caratteristiche.</p>
+                <p class="page__lead">Clicca una caratteristica per leggere i dettagli.</p>
             </header>
+
+            <div class="node__labels node__labels--top">
+                <button class="node__label" data-spec="autonomia">Autonomia</button>
+                <button class="node__label" data-spec="propulsione">Propulsione</button>
+                <button class="node__label" data-spec="controllo">Controllo</button>
+                <button class="node__label" data-spec="attrezzi">Attrezzi</button>
+                <button class="node__label" data-spec="funzioni">Funzioni</button>
+            </div>
 
             <div class="node__stage">
                 <img src="img/node.png" alt="Mycelium Node nello showroom" class="node__image">
+            </div>
 
-                <!-- Pallini cliccabili -->
-                <div class="node__bullets">
-                    <button class="node__bullet" data-spec="autonomia"  style="--x:8%;  --y:18%;">
-                        <span class="node__dot"></span><span class="node__name">Autonomia</span>
-                    </button>
-                    <button class="node__bullet" data-spec="propulsione" style="--x:8%;  --y:42%;">
-                        <span class="node__dot"></span><span class="node__name">Propulsione</span>
-                    </button>
-                    <button class="node__bullet" data-spec="controllo"  style="--x:8%;  --y:66%;">
-                        <span class="node__dot"></span><span class="node__name">Controllo</span>
-                    </button>
-                    <button class="node__bullet" data-spec="attrezzi"   style="--x:8%;  --y:88%;">
-                        <span class="node__dot"></span><span class="node__name">Attrezzi</span>
-                    </button>
-                    <button class="node__bullet" data-spec="dimensioni" style="--x:92%; --y:18%;">
-                        <span class="node__dot"></span><span class="node__name">Dimensioni</span>
-                    </button>
-                    <button class="node__bullet" data-spec="connesso"   style="--x:92%; --y:38%;">
-                        <span class="node__dot"></span><span class="node__name">Connesso</span>
-                    </button>
-                    <button class="node__bullet" data-spec="funzioni"   style="--x:92%; --y:58%;">
-                        <span class="node__dot"></span><span class="node__name">Funzioni</span>
-                    </button>
-                    <button class="node__bullet" data-spec="vantaggi"   style="--x:92%; --y:78%;">
-                        <span class="node__dot"></span><span class="node__name">Vantaggi</span>
-                    </button>
-                    <button class="node__bullet" data-spec="garanzia"   style="--x:50%; --y:6%;">
-                        <span class="node__dot"></span><span class="node__name">Garanzia</span>
-                    </button>
-                    <button class="node__bullet" data-spec="prezzo"     style="--x:50%; --y:96%;">
-                        <span class="node__dot"></span><span class="node__name">Prezzo</span>
-                    </button>
-                </div>
-
-                <!-- Spec popup (shown on bullet click) -->
-                <div class="node__backdrop" id="nodeBackdrop" aria-hidden="true"></div>
-                <div class="node__popup" id="nodePopup" role="dialog" aria-modal="true" aria-hidden="true">
-                    <button class="node__popup-close" id="nodePopupClose" aria-label="Chiudi">&times;</button>
-                    <div class="node__popup-content"></div>
-                </div>
+            <div class="node__labels node__labels--bottom">
+                <button class="node__label" data-spec="dimensioni">Dimensioni</button>
+                <button class="node__label" data-spec="connesso">Connesso</button>
+                <button class="node__label" data-spec="vantaggi">Vantaggi</button>
+                <button class="node__label" data-spec="garanzia">Garanzia</button>
+                <button class="node__label" data-spec="prezzo">Prezzo</button>
             </div>
 
             <!-- Spec content (hidden, used by JS) -->
@@ -217,6 +192,13 @@
                     <span class="btn__arrow" aria-hidden="true">&rarr;</span>
                 </a>
             </div>
+        </div>
+
+        <!-- Spec popup (full-screen modal) -->
+        <div class="node__backdrop" id="nodeBackdrop" aria-hidden="true"></div>
+        <div class="node__popup" id="nodePopup" role="dialog" aria-modal="true" aria-hidden="true">
+            <button class="node__popup-close" id="nodePopupClose" aria-label="Chiudi">&times;</button>
+            <div class="node__popup-content"></div>
         </div>
     </section>
 
