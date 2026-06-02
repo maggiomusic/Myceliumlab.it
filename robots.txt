@@ -1,0 +1,53 @@
+# https://myceliumlab.it/robots.txt
+# Mycelium Lab s.r.l.
+
+User-agent: *
+Allow: /
+
+# Crawlers AI / Answer Engines: explicit allow for AEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Disallow scratch / development paths
+Disallow: /mycelondescrizione/
+Disallow: /.git/
+Disallow: /.DS_Store
+
+# Sitemap
+Sitemap: https://myceliumlab.it/sitemap.xml

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://myceliumlab.it/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://myceliumlab.it/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://myceliumlab.it/"/>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/home.jpeg</image:loc>
+            <image:title>Mycelium Node nel vigneto al tramonto</image:title>
+            <image:caption>Robot agricolo elettrico autonomo Mycelium Node</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/node.png</image:loc>
+            <image:title>Mycelium Node — showroom</image:title>
+            <image:caption>Robot agricolo modulare ed elettrico</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/concept.png</image:loc>
+            <image:title>Concept Mycelium Lab</image:title>
+            <image:caption>Filosofia dell'agricoltura rigenerativa Mycelium</image:caption>
+        </image:image>
+    </url>
+</urlset>

@@ -1,15 +1,238 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- ===== Encoding & Viewport ===== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mycelium Lab &mdash; Il sistema operativo dell'agricoltura rigenerativa</title>
-    <meta name="description" content="Mycelium Lab s.r.l. progetta nodi robotici elettrici e autonomi per un'agricoltura distribuita, rigenerativa e accessibile.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ===== Primary SEO ===== -->
+    <title>Mycelium Lab &mdash; Il sistema operativo dell'agricoltura rigenerativa | Robot agricoli elettrici autonomi</title>
+    <meta name="description" content="Mycelium Lab progetta robot agricoli elettrici, autonomi e modulari per un'agricoltura rigenerativa, distribuita e accessibile. Una piattaforma aperta che restituisce suolo, biodiversità, produttività e tempo. Made in Modena, Italy.">
+    <meta name="keywords" content="agricoltura rigenerativa, robot agricolo, robot agricolo elettrico, agricoltura di precisione, agtech, agritech, agricoltura autonoma, agricoltura sostenibile, robot per agricoltura, robotica agricola italia, mycelium lab, mycelium node, agricoltura distribuita, piattaforma agricola open, robot trattore elettrico, automazione agricola, agricoltura 4.0, modena, italia">
+    <meta name="author" content="Mycelium Lab s.r.l.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="Italian">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    <link rel="canonical" href="https://myceliumlab.it/">
+
+    <!-- ===== Localization / hreflang ===== -->
+    <link rel="alternate" hreflang="it" href="https://myceliumlab.it/">
+    <link rel="alternate" hreflang="x-default" href="https://myceliumlab.it/">
+
+    <!-- ===== Geo tags (local SEO) ===== -->
+    <meta name="geo.region" content="IT-MO">
+    <meta name="geo.placename" content="Modena">
+    <meta name="geo.position" content="44.6471;10.9252">
+    <meta name="ICBM" content="44.6471, 10.9252">
+
+    <!-- ===== Open Graph (Facebook, LinkedIn, WhatsApp) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mycelium Lab">
+    <meta property="og:title" content="Mycelium Lab &mdash; Il sistema operativo dell'agricoltura rigenerativa">
+    <meta property="og:description" content="Robot agricoli elettrici, autonomi e modulari per un'agricoltura rigenerativa, distribuita e accessibile. Una piattaforma aperta che restituisce suolo, biodiversità, produttività e tempo.">
+    <meta property="og:url" content="https://myceliumlab.it/">
+    <meta property="og:image" content="https://myceliumlab.it/img/home.jpeg">
+    <meta property="og:image:secure_url" content="https://myceliumlab.it/img/home.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta property="og:image:alt" content="Mycelium Node nel vigneto al tramonto &mdash; robot agricolo elettrico autonomo">
+    <meta property="og:locale" content="it_IT">
+
+    <!-- ===== Twitter / X Card ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mycelium Lab &mdash; Il sistema operativo dell'agricoltura rigenerativa">
+    <meta name="twitter:description" content="Robot agricoli elettrici, autonomi e modulari per un'agricoltura rigenerativa, distribuita e accessibile.">
+    <meta name="twitter:image" content="https://myceliumlab.it/img/home.jpeg">
+    <meta name="twitter:image:alt" content="Mycelium Node nel vigneto al tramonto">
+
+    <!-- ===== PWA / Mobile / Theme ===== -->
+    <meta name="theme-color" content="#ec1aa3">
+    <meta name="msapplication-TileColor" content="#0a0a0d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mycelium Lab">
+    <meta name="application-name" content="Mycelium Lab">
+    <meta name="format-detection" content="telephone=yes">
+
+    <!-- ===== Favicon set ===== -->
     <link rel="icon" type="image/png" href="img/OFFICIAL LOGO.png">
+    <link rel="shortcut icon" type="image/png" href="img/OFFICIAL LOGO.png">
+    <link rel="apple-touch-icon" href="img/OFFICIAL LOGO.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!-- ===== Preconnect / Performance ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preload" as="image" href="img/home.jpeg" fetchpriority="high">
+
+    <!-- ===== Fonts & Styles ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- ===== Structured data (Schema.org JSON-LD) for AEO ===== -->
+    <!-- Organization + LocalBusiness: identifies the company for Google Knowledge Panel, AI search engines (Perplexity, ChatGPT, Gemini), and rich results. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Organization", "LocalBusiness"],
+          "@id": "https://myceliumlab.it/#organization",
+          "name": "Mycelium Lab s.r.l.",
+          "alternateName": "Mycelium Lab",
+          "url": "https://myceliumlab.it/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myceliumlab.it/img/OFFICIAL%20LOGO.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://myceliumlab.it/img/home.jpeg",
+          "description": "Mycelium Lab progetta robot agricoli elettrici, autonomi e modulari per un'agricoltura rigenerativa, distribuita e accessibile.",
+          "foundingDate": "2024",
+          "vatID": "IT04262350368",
+          "taxID": "04262350368",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Viale Virgilio 50",
+            "addressLocality": "Modena",
+            "postalCode": "41123",
+            "addressRegion": "MO",
+            "addressCountry": "IT"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.6471,
+            "longitude": 10.9252
+          },
+          "telephone": "+39-346-4734538",
+          "email": "info@myceliumlab.it",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+39-346-4734538",
+              "contactType": "sales",
+              "areaServed": ["IT", "EU"],
+              "availableLanguage": ["Italian", "English"]
+            },
+            {
+              "@type": "ContactPoint",
+              "email": "info@myceliumlab.it",
+              "contactType": "customer support",
+              "areaServed": ["IT", "EU"],
+              "availableLanguage": ["Italian", "English"]
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/company/mycelium-lab"
+          ],
+          "knowsAbout": [
+            "Agricoltura rigenerativa",
+            "Robotica agricola",
+            "Veicoli elettrici autonomi",
+            "Agricoltura di precisione",
+            "AgTech",
+            "Agricoltura sostenibile",
+            "Automazione agricola"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://myceliumlab.it/#website",
+          "url": "https://myceliumlab.it/",
+          "name": "Mycelium Lab",
+          "description": "Il sistema operativo dell'agricoltura rigenerativa",
+          "publisher": { "@id": "https://myceliumlab.it/#organization" },
+          "inLanguage": "it-IT"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://myceliumlab.it/#webpage",
+          "url": "https://myceliumlab.it/",
+          "name": "Mycelium Lab &mdash; Il sistema operativo dell'agricoltura rigenerativa",
+          "isPartOf": { "@id": "https://myceliumlab.it/#website" },
+          "about": { "@id": "https://myceliumlab.it/#organization" },
+          "primaryImageOfPage": "https://myceliumlab.it/img/home.jpeg",
+          "inLanguage": "it-IT"
+        },
+        {
+          "@type": "Product",
+          "@id": "https://myceliumlab.it/#mycelium-node",
+          "name": "Mycelium Node",
+          "description": "Robot agricolo elettrico, autonomo e modulare. Piattaforma aperta che restituisce suolo, biodiversità, produttività e tempo.",
+          "image": "https://myceliumlab.it/img/node.png",
+          "brand": { "@id": "https://myceliumlab.it/#organization" },
+          "manufacturer": { "@id": "https://myceliumlab.it/#organization" },
+          "category": "Robot agricolo elettrico autonomo",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "95000",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/PreOrder",
+            "seller": { "@id": "https://myceliumlab.it/#organization" },
+            "areaServed": ["IT", "EU"]
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ structured data (AEO): drives direct answers in Google AI Overviews, Perplexity, ChatGPT Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cos'è Mycelium Lab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mycelium Lab è un'azienda italiana con sede a Modena che progetta robot agricoli elettrici, autonomi e modulari. Mycelium non è una macchina: è il sistema operativo dell'agricoltura rigenerativa, una piattaforma aperta che restituisce suolo, biodiversità, produttività e tempo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto costa il robot Mycelium Node?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mycelium Node è disponibile a partire da 95.000 € + IVA. Il prezzo finale dipende dalla configurazione e dagli attrezzi modulari scelti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A cosa serve un robot Mycelium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mycelium Node è una piattaforma agricola elettrica e autonoma utilizzabile per concimazione di precisione, semina, raccolta assistita, trinciatura, taglio dell'erba, atomizzazione, potatura, trasporto, pulizia stalle, fienagione, lavoro notturno silenzioso, agricoltura sinergica e operazioni a zero emissioni in serra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Come funziona l'autonomia del robot agricolo Mycelium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mycelium è completamente elettrico, autonomo e connesso. Lavora in modo silenzioso anche di notte, opera a zero emissioni e si integra in ecosistemi aperti grazie a un'architettura modulare che accoglie attrezzi e funzioni di terze parti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dove ha sede Mycelium Lab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mycelium Lab s.r.l. ha sede in Viale Virgilio 50, 41123 Modena (Italia). È possibile richiedere una demo o una visita scrivendo a info@myceliumlab.it o chiamando il +39 346 4734538."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Synapse background canvas -->
@@ -52,7 +275,7 @@
          ===================================================== -->
     <section class="page home" id="home">
         <div class="home__hero">
-            <img src="img/home.png" alt="Mycelium nel vigneto al tramonto" class="home__bg">
+            <img src="img/home.jpeg" alt="Mycelium nel vigneto al tramonto" class="home__bg">
             <div class="home__overlay"></div>
 
             <div class="home__content">
