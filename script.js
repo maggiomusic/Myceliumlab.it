@@ -208,23 +208,24 @@ if (flyer) {
     });
 }
 
-// --- Applicazioni: auto-advancing single-image gallery ---
-const appsRail = document.getElementById('appsRail');
-const appsDots = document.getElementById('appsDots');
+// --- Gallerie a scorrimento automatico (Applicazioni e hero GreenCare) ---
+function initGallery({ rail, dots, itemSelector, dotClass, interval = 4500 }) {
+    if (!rail) return;
+    const items = Array.from(rail.querySelectorAll(itemSelector));
+    if (items.length < 2) return;   // una sola immagine: niente pallini ne' autoscroll
 
-if (appsRail) {
-    const items = Array.from(appsRail.querySelectorAll('.apps__item'));
     let currentIdx = 0;
     let paused = false;
 
     // Build pagination dots
-    if (appsDots) {
+    if (dots) {
         items.forEach((_, i) => {
             const dot = document.createElement('button');
-            dot.className = 'apps__dot' + (i === 0 ? ' is-active' : '');
+            dot.type = 'button';
+            dot.className = dotClass + (i === 0 ? ' is-active' : '');
             dot.setAttribute('aria-label', `Vai a immagine ${i + 1}`);
             dot.addEventListener('click', () => goTo(i));
-            appsDots.appendChild(dot);
+            dots.appendChild(dot);
         });
     }
 
@@ -232,45 +233,54 @@ if (appsRail) {
         currentIdx = (i + items.length) % items.length;
         const item = items[currentIdx];
         if (!item) return;
-        appsRail.scrollTo({ left: item.offsetLeft, behavior: 'smooth' });
-        if (appsDots) {
-            appsDots.querySelectorAll('.apps__dot').forEach((d, idx) => {
-                d.classList.toggle('is-active', idx === currentIdx);
-            });
-        }
+        rail.scrollTo({ left: item.offsetLeft, behavior: 'smooth' });
+        syncDots();
     }
 
-    function advance() {
-        if (paused) return;
-        goTo(currentIdx + 1);
+    function syncDots() {
+        if (!dots) return;
+        dots.querySelectorAll('.' + dotClass).forEach((d, idx) => {
+            d.classList.toggle('is-active', idx === currentIdx);
+        });
     }
 
-    setInterval(advance, 4500);
+    setInterval(() => { if (!paused) goTo(currentIdx + 1); }, interval);
 
     // Pause on hover / focus, resume on leave
     ['mouseenter', 'focusin'].forEach(ev =>
-        appsRail.addEventListener(ev, () => paused = true));
+        rail.addEventListener(ev, () => paused = true));
     ['mouseleave', 'focusout'].forEach(ev =>
-        appsRail.addEventListener(ev, () => paused = false));
+        rail.addEventListener(ev, () => paused = false));
 
     // Sync dots when user scrolls manually (swipe / scrollbar)
     let scrollDebounce;
-    appsRail.addEventListener('scroll', () => {
+    rail.addEventListener('scroll', () => {
         clearTimeout(scrollDebounce);
         scrollDebounce = setTimeout(() => {
             const closest = items.reduce((best, el, i) => {
-                const d = Math.abs(el.offsetLeft - appsRail.scrollLeft);
+                const d = Math.abs(el.offsetLeft - rail.scrollLeft);
                 return d < best.d ? { d, i } : best;
             }, { d: Infinity, i: 0 });
             currentIdx = closest.i;
-            if (appsDots) {
-                appsDots.querySelectorAll('.apps__dot').forEach((d, idx) => {
-                    d.classList.toggle('is-active', idx === currentIdx);
-                });
-            }
+            syncDots();
         }, 120);
     });
 }
+
+initGallery({
+    rail: document.getElementById('appsRail'),
+    dots: document.getElementById('appsDots'),
+    itemSelector: '.apps__item',
+    dotClass: 'apps__dot',
+});
+
+initGallery({
+    rail: document.getElementById('gcRail'),
+    dots: document.getElementById('gcDots'),
+    itemSelector: '.gc__slide',
+    dotClass: 'gc__dot',
+    interval: 5200,
+});
 
 // --- Scroll reveal ---
 const revealEls = document.querySelectorAll(

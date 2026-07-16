@@ -706,12 +706,87 @@ button { font-family: inherit; }
 .gc__link:hover { color: var(--color-accent-soft); }
 .gc__link:hover span { transform: translateX(5px); }
 
-.gc__hero-media img {
-    width: 100%;
-    height: auto;
+/* Galleria hero: stesso comportamento di Applicazioni (vedi initGallery),
+   ma 4:3 invece di 16:9 perche' vive in una colonna, non a tutta pagina. */
+
+/* Deve restare posizionato: initGallery scorre usando slide.offsetLeft, che e'
+   relativo all'offsetParent. Senza questo il riferimento risalirebbe a .page e
+   le slide riporterebbero la loro posizione nella pagina invece che nel rail.
+   Stessa ragione per cui .apps e' position: relative. */
+.gc__gallery { position: relative; }
+
+.gc__rail {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
     border-radius: 16px;
     border: 1px solid var(--color-border);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.gc__rail::-webkit-scrollbar { display: none; }
+
+.gc__slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+    background: var(--color-surface);
+}
+
+.gc__slide img {
+    width: 100%;
+    /* height:auto e' necessario, non ridondante: gli attributi width/height in
+       HTML valgono come hint di presentazione, e senza questo l'altezza resterebbe
+       quella dell'attributo, rendendo aspect-ratio inefficace. */
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.gc__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 20px 16px;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(to top, rgba(10, 10, 13, 0.88) 0%, rgba(10, 10, 13, 0.5) 60%, transparent 100%);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.gc__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.gc__dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-border-light);
+    cursor: pointer;
+    transition: all 0.3s var(--ease-out);
+}
+
+.gc__dot:hover { background: var(--color-accent-soft); }
+
+.gc__dot.is-active {
+    background: var(--color-accent);
+    width: 24px;
+    border-radius: 100px;
+    box-shadow: 0 0 12px var(--color-accent-glow);
 }
 
 /* Indicatori sintetici */
@@ -1645,8 +1720,8 @@ button { font-family: inherit; }
         gap: 26px;
     }
 
-    /* La foto prima del testo: e' lei a spiegare cosa fa il robot */
-    .gc__hero-media { order: -1; }
+    /* Le foto prima del testo: sono loro a spiegare cosa fa il robot */
+    .gc__gallery { order: -1; }
 
     .gc__ctas .btn { flex: 1; min-width: 150px; }
 
