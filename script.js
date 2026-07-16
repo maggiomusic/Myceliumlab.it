@@ -81,13 +81,29 @@ const flyer = document.getElementById('greenCareFlyer');
 if (flyer) {
     const flyerPill = document.getElementById('greenCarePill');
     const flyerClose = document.getElementById('greenCareClose');
+    const flyerZoom = document.getElementById('greenCareZoom');
+    const flyerBackdrop = document.getElementById('greenCareBackdrop');
     const AUTO_COLLAPSE_MS = 10000;
     let collapseTimer;
 
+    // Stati: 'icon' (pill) -> 'open' (volantino) -> 'zoom' (al doppio)
     function setFlyerState(state) {
         flyer.dataset.state = state;
-        flyerPill.setAttribute('aria-expanded', String(state === 'open'));
-        sessionStorage.setItem('greencare-flyer', state);
+        flyerPill.setAttribute('aria-expanded', String(state !== 'icon'));
+        flyerZoom.setAttribute('aria-pressed', String(state === 'zoom'));
+        flyerZoom.setAttribute('aria-label',
+            state === 'zoom' ? 'Riporta il volantino alla dimensione normale'
+                             : 'Ingrandisci il volantino al doppio');
+        // Lo zoom è uno stato di lettura attiva: non va memorizzato né chiuso da solo.
+        // Blocca anche lo scroll: pannello e backdrop sono fixed e, senza blocco,
+        // resterebbero sospesi sopra le sezioni successive alla home.
+        if (state === 'zoom') {
+            clearTimeout(collapseTimer);
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+            sessionStorage.setItem('greencare-flyer', state);
+        }
     }
 
     function scheduleCollapse() {
@@ -101,8 +117,7 @@ if (flyer) {
 
     // Chi ha già ridotto il volantino in questa sessione lo ritrova ridotto.
     if (sessionStorage.getItem('greencare-flyer') === 'icon') {
-        flyer.dataset.state = 'icon';
-        flyerPill.setAttribute('aria-expanded', 'false');
+        setFlyerState('icon');
     } else {
         scheduleCollapse();
     }
@@ -117,8 +132,38 @@ if (flyer) {
         setFlyerState('icon');
     });
 
+    flyerZoom.addEventListener('click', () => {
+        if (flyer.dataset.state === 'zoom') {
+            setFlyerState('open');
+            scheduleCollapse();
+        } else {
+            setFlyerState('zoom');
+        }
+    });
+
+    // Dal backdrop si torna al volantino, non alla pill: chiude lo zoom, non tutto.
+    flyerBackdrop.addEventListener('click', () => {
+        setFlyerState('open');
+        scheduleCollapse();
+    });
+
+    // La sidenav resta sopra il backdrop (z-index a livello di root): chi la usa
+    // sta lasciando la home, quindi lo zoom si chiude e sblocca lo scroll.
+    sidenav.querySelectorAll('.sidenav__link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (flyer.dataset.state === 'zoom') setFlyerState('icon');
+        });
+    });
+
+    // Esc scende di un livello per volta: zoom -> volantino -> pill.
+    // Se è aperto il popup Caratteristiche, l'Esc è suo.
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && flyer.dataset.state === 'open') {
+        if (e.key !== 'Escape') return;
+        if (popup?.classList.contains('is-open')) return;
+        if (flyer.dataset.state === 'zoom') {
+            setFlyerState('open');
+            scheduleCollapse();
+        } else if (flyer.dataset.state === 'open') {
             clearTimeout(collapseTimer);
             setFlyerState('icon');
         }

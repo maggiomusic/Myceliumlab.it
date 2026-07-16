@@ -405,8 +405,10 @@ button { font-family: inherit; }
    Ancorato in basso a destra dell'hero: scorre via con la home
    (non invade le altre sezioni), sta sopra la riga di copyright
    e lascia libera la sidenav a sinistra.
-   data-state="open" = volantino aperto, "icon" = ridotto a pill. */
+   Tre stati: "icon" = ridotto a pill, "open" = volantino,
+   "zoom" = volantino al doppio, centrato sopra un backdrop. */
 .flyer {
+    --flyer-w: min(250px, 21vw, 33vh);
     position: absolute;
     z-index: 3;
     right: clamp(16px, 2.5vw, 32px);
@@ -425,14 +427,64 @@ button { font-family: inherit; }
     pointer-events: none;
 }
 
+/* Zoom: esce dall'angolo e si centra nel viewport.
+   Centrato con inset+margin auto e non con left:50%+translate: con
+   l'offset al 50% lo shrink-to-fit lascerebbe solo 50vw di spazio e il
+   `max-width:100%` del reset taglierebbe il volantino sugli schermi stretti. */
+.flyer[data-state="zoom"] .flyer__panel {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: max-content;
+    height: max-content;
+    transform: none;
+    z-index: 501;
+}
+
+.flyer__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(5, 5, 8, 0.82);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease-out);
+}
+
+.flyer[data-state="zoom"] .flyer__backdrop {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.flyer__zoom {
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+}
+
+.flyer[data-state="zoom"] .flyer__zoom { cursor: zoom-out; }
+
 .flyer__img {
     display: block;
-    width: min(250px, 21vw, 33vh);
+    width: var(--flyer-w);
     height: auto;
     border-radius: 14px;
     border: 1px solid rgba(236, 26, 163, 0.45);
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.7),
                 0 0 34px rgba(236, 26, 163, 0.22);
+    transition: width 0.45s var(--ease-out);
+}
+
+/* Il doppio esatto, con i cap come rete di sicurezza perche' non esca mai
+   dal viewport: il volantino e' 2:3, quindi il limite in altezza si esprime
+   come larghezza (62vh di larghezza = 93vh di altezza). Sugli schermi che
+   non reggono il 2x pieno il volantino resta appena sotto. */
+.flyer[data-state="zoom"] .flyer__img {
+    width: min(calc(var(--flyer-w) * 2), 92vw, 62vh);
+    border-radius: 18px;
 }
 
 .flyer__close {
@@ -486,7 +538,7 @@ button { font-family: inherit; }
     box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55), 0 0 0 0 var(--color-accent-glow);
 }
 
-.flyer[data-state="open"] .flyer__pill {
+.flyer:not([data-state="icon"]) .flyer__pill {
     opacity: 0;
     transform: scale(0.6);
     pointer-events: none;
@@ -514,8 +566,9 @@ button { font-family: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
     .flyer__panel, .flyer__pill { transition: opacity 0.2s linear; }
+    .flyer__img { transition: none; }
     .flyer[data-state="icon"] .flyer__panel { transform: none; }
-    .flyer[data-state="open"] .flyer__pill { transform: none; }
+    .flyer:not([data-state="icon"]) .flyer__pill { transform: none; }
 }
 
 /* ========================================
@@ -1242,11 +1295,10 @@ button { font-family: inherit; }
 
     /* Volantino: sopra il copyright, che qui e' centrato a tutta larghezza */
     .flyer {
+        --flyer-w: min(52vw, 30vh);
         right: 14px;
         bottom: 42px;
     }
-
-    .flyer__img { width: min(52vw, 30vh); }
 
     .flyer__pill { padding: 6px 12px 6px 6px; font-size: 0.7rem; }
 
