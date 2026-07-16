@@ -289,6 +289,20 @@
                 </div>
             </div>
 
+            <!-- Volantino Green Care: aperto all'avvio, si riduce a icona dopo ~10s -->
+            <aside class="flyer" id="greenCareFlyer" data-state="open">
+                <div class="flyer__panel" id="greenCarePanel">
+                    <button class="flyer__close" id="greenCareClose" type="button" aria-label="Riduci il volantino a icona">&times;</button>
+                    <img src="img/greencare-volantino.png" width="800" height="1200" decoding="async"
+                         alt="Volantino Mycelium Green Care: il robot professionale autonomo per la cura del verde. Demo in campo, prova a noleggio, pronto all'uso. Versioni trincia e lame rotanti. Chiamaci per una demo: +39 375 5654351."
+                         class="flyer__img">
+                </div>
+                <button class="flyer__pill" id="greenCarePill" type="button" aria-expanded="true" aria-controls="greenCarePanel">
+                    <img src="img/logo2.png" alt="" aria-hidden="true" class="flyer__pill-thumb">
+                    <span class="flyer__pill-text">Green <strong>Care</strong></span>
+                </button>
+            </aside>
+
             <p class="home__copyright">
                 marchio &copy; copyright Mycelium Lab s.r.l. &mdash; rights reserved &mdash; P.IVA 04262350368
             </p>

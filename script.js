@@ -75,6 +75,56 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && popup?.classList.contains('is-open')) closePopup();
 });
 
+// --- Volantino Green Care: aperto all'avvio, si riduce a icona dopo ~10s ---
+const flyer = document.getElementById('greenCareFlyer');
+
+if (flyer) {
+    const flyerPill = document.getElementById('greenCarePill');
+    const flyerClose = document.getElementById('greenCareClose');
+    const AUTO_COLLAPSE_MS = 10000;
+    let collapseTimer;
+
+    function setFlyerState(state) {
+        flyer.dataset.state = state;
+        flyerPill.setAttribute('aria-expanded', String(state === 'open'));
+        sessionStorage.setItem('greencare-flyer', state);
+    }
+
+    function scheduleCollapse() {
+        clearTimeout(collapseTimer);
+        collapseTimer = setTimeout(() => {
+            // Non chiudere sotto il cursore dell'utente: riprova più tardi.
+            if (flyer.matches(':hover')) return scheduleCollapse();
+            setFlyerState('icon');
+        }, AUTO_COLLAPSE_MS);
+    }
+
+    // Chi ha già ridotto il volantino in questa sessione lo ritrova ridotto.
+    if (sessionStorage.getItem('greencare-flyer') === 'icon') {
+        flyer.dataset.state = 'icon';
+        flyerPill.setAttribute('aria-expanded', 'false');
+    } else {
+        scheduleCollapse();
+    }
+
+    flyerPill.addEventListener('click', () => {
+        setFlyerState('open');
+        scheduleCollapse();
+    });
+
+    flyerClose.addEventListener('click', () => {
+        clearTimeout(collapseTimer);
+        setFlyerState('icon');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && flyer.dataset.state === 'open') {
+            clearTimeout(collapseTimer);
+            setFlyerState('icon');
+        }
+    });
+}
+
 // --- Applicazioni: auto-advancing single-image gallery ---
 const appsRail = document.getElementById('appsRail');
 const appsDots = document.getElementById('appsDots');
