@@ -372,6 +372,16 @@
                 <h2 class="page__title"><span class="accent">Caratteristiche</span></h2>
             </header>
 
+            <!-- Selettore gamma: Mycelium Node / GreenCare -->
+            <div class="range" role="tablist" aria-label="Scegli la gamma">
+                <button class="range__tab is-active" type="button" role="tab" id="rangeTabNode"
+                        data-range="node" aria-selected="true" aria-controls="rangePanelNode">Mycelium Node</button>
+                <button class="range__tab" type="button" role="tab" id="rangeTabGreencare"
+                        data-range="greencare" aria-selected="false" aria-controls="rangePanelGreencare" tabindex="-1">GreenCare</button>
+            </div>
+
+            <div class="range__panel is-active" id="rangePanelNode" role="tabpanel" aria-labelledby="rangeTabNode">
+
             <div class="node__labels node__labels--top">
                 <button class="node__label" data-spec="acquisto">Acquisto / Noleggio</button>
                 <button class="node__label" data-spec="attrezzi">Attrezzi</button>
@@ -391,6 +401,88 @@
                 <button class="node__label" data-spec="propulsione">Propulsione</button>
                 <button class="node__label" data-spec="vantaggi">Vantaggi</button>
             </div>
+
+            </div><!-- /rangePanelNode -->
+
+            <div class="range__panel" id="rangePanelGreencare" role="tabpanel" aria-labelledby="rangeTabGreencare" hidden>
+
+                <div class="gc__hero">
+                    <div class="gc__hero-text">
+                        <span class="gc__label">GreenCare</span>
+                        <h3 class="gc__title">Il robot professionale per la cura del verde</h3>
+                        <p class="gc__subtitle">Robot cingolati autonomi e radiocomandati per lavorare in sicurezza su <strong>pendenze</strong>, <strong>aree difficili</strong> e <strong>grandi superfici</strong>.</p>
+                        <div class="gc__ctas">
+                            <a href="#contatti" class="btn btn--primary">Prenota una demo</a>
+                            <a href="#contatti" class="btn btn--ghost">Provalo a noleggio</a>
+                        </div>
+                        <a href="#greencare-gamma" class="gc__link">Scopri la gamma <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <figure class="gc__hero-media">
+                        <img src="img/greencare-bordo-strade.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+                             alt="Due robot GreenCare cingolati al lavoro su una scarpata ripida a bordo strada, sotto il guardrail">
+                    </figure>
+                </div>
+
+                <ul class="gc__stats">
+                    <li class="gc__stat">
+                        <span class="gc__stat-key">Pendenza</span>
+                        <span class="gc__stat-val">Fino a 70&deg;<a href="#gcNote" class="gc__ref" aria-label="Vedi nota sulle prestazioni">*</a></span>
+                    </li>
+                    <li class="gc__stat">
+                        <span class="gc__stat-key">Produttivit&agrave;</span>
+                        <span class="gc__stat-val">Fino a 5.500 m&sup2;/h</span>
+                    </li>
+                    <li class="gc__stat">
+                        <span class="gc__stat-key">Taglio</span>
+                        <span class="gc__stat-val">Da 550 a 1.300 mm</span>
+                    </li>
+                    <li class="gc__stat">
+                        <span class="gc__stat-key">Controllo</span>
+                        <span class="gc__stat-val">Autonomo e radiocomandato</span>
+                    </li>
+                </ul>
+
+                <p class="gc__note" id="gcNote">*Prestazioni variabili in base al modello, al terreno e alle condizioni operative.</p>
+
+                <div class="gc__pitch">
+                    <div class="gc__pitch-text">
+                        <p class="gc__claim"><em>Pi&ugrave; sicurezza. Meno fatica. Maggiore produttivit&agrave;.</em></p>
+                        <p><strong>GreenCare</strong> &egrave; la linea Mycelium dedicata alla <strong>manutenzione professionale del verde</strong>.</p>
+                        <p>La <strong>trazione cingolata</strong> e il <strong>controllo da remoto</strong> permettono di lavorare dove un operatore o un mezzo tradizionale incontrerebbero difficolt&agrave;: scarpate, argini, bordi stradali, parchi, impianti fotovoltaici, terreni agricoli e aree boschive.</p>
+                        <ul class="gc__values">
+                            <li>Riduce l'esposizione dell'operatore a <strong>pendenze e aree pericolose</strong>.</li>
+                            <li>Aumenta la <strong>velocit&agrave; di lavorazione</strong>.</li>
+                            <li>Riduce il fabbisogno di <strong>manodopera</strong> nelle attivit&agrave; pi&ugrave; gravose.</li>
+                            <li>Consente di <strong>controllare il lavoro a distanza</strong>.</li>
+                            <li>Offre <strong>telemetria e monitoraggio operativo</strong> in tempo reale.</li>
+                        </ul>
+                        <p>&Egrave; <strong>pronto all'uso</strong> e viene consegnato direttamente presso il cliente. Puoi <strong>acquistare</strong> GreenCare oppure <strong>provarlo prima</strong> direttamente sul tuo terreno. Mycelium gestisce <strong>consegna</strong>, <strong>primo avvio</strong> e <strong>assistenza</strong>.</p>
+                    </div>
+                    <figure class="gc__pitch-media">
+                        <img src="img/greencare-trincia.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+                             alt="Robot GreenCare con attrezzo trincia al lavoro sulla vegetazione fitta ai margini di un bosco">
+                    </figure>
+                </div>
+
+                <h4 class="gc__subhead">Come averlo</h4>
+                <ul class="gc__formulas">
+                    <li><a href="#contatti"><span>Acquisto</span></a></li>
+                    <li><a href="#contatti"><span>Noleggio</span></a></li>
+                    <li><a href="#contatti"><span>Rent to buy</span></a></li>
+                    <li><a href="#contatti"><span>Leasing</span></a></li>
+                    <li><a href="#contatti"><span>Demo in campo</span></a></li>
+                </ul>
+
+                <h4 class="gc__subhead">Servizi inclusi o disponibili</h4>
+                <ul class="gc__services">
+                    <li>Garanzia di <strong>3 anni</strong></li>
+                    <li>Assistenza tecnica</li>
+                    <li>Consegna a domicilio</li>
+                    <li>Primo avvio presso il cliente</li>
+                    <li>Supporto nella scelta del modello</li>
+                </ul>
+
+            </div><!-- /rangePanelGreencare -->
 
             <!-- Spec content (hidden, used by JS) -->
             <template id="nodeSpecs">

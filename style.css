@@ -198,6 +198,19 @@ button { font-family: inherit; }
     transform: translateY(-1px);
 }
 
+.btn--ghost {
+    background: transparent;
+    color: var(--color-text);
+    box-shadow: inset 0 0 0 1px var(--color-border-light);
+}
+
+.btn--ghost:hover {
+    color: #fff;
+    background: rgba(236, 26, 163, 0.1);
+    box-shadow: inset 0 0 0 1px var(--color-accent);
+    transform: translateY(-1px);
+}
+
 .btn--large {
     padding: 18px 42px;
     font-size: 1.0625rem;
@@ -579,6 +592,317 @@ button { font-family: inherit; }
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+}
+
+/* --- Selettore gamma: Mycelium Node / GreenCare --- */
+.range {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: -24px auto 44px;
+    padding: 5px;
+    width: max-content;
+    max-width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: rgba(16, 16, 21, 0.7);
+}
+
+.range__tab {
+    padding: 10px 26px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color 0.25s, background 0.25s var(--ease-out), box-shadow 0.25s;
+}
+
+.range__tab:hover { color: var(--color-text); }
+
+.range__tab.is-active {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 6px 22px var(--color-accent-glow);
+}
+
+.range__panel[hidden] { display: none; }
+
+/* Il pannello Node puo' stare sui 1200px di .node__inner perche' ha tutto
+   centrato; GreenCare ha testo allineato a sinistra, quindi rientra nei
+   1100px che gia' usano .apps e .values__columns per non finire sotto la sidenav. */
+#rangePanelGreencare {
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.range__panel.is-active {
+    animation: rangeIn 0.4s var(--ease-out) both;
+}
+
+@keyframes rangeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* --- Pannello GreenCare --- */
+.gc__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(28px, 4vw, 56px);
+}
+
+.gc__label {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+}
+
+.gc__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.gc__subtitle {
+    margin-top: 18px;
+    color: var(--color-text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+
+.gc__subtitle strong { color: var(--color-text); font-weight: 600; }
+
+.gc__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.gc__link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--color-accent);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.gc__link span { display: inline-block; transition: transform 0.25s var(--ease-out); }
+.gc__link:hover { color: var(--color-accent-soft); }
+.gc__link:hover span { transform: translateX(5px); }
+
+.gc__hero-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Indicatori sintetici */
+.gc__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-top: clamp(36px, 5vw, 60px);
+}
+
+.gc__stat {
+    padding: 22px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-surface);
+    text-align: center;
+    transition: border-color 0.25s, transform 0.25s var(--ease-out);
+}
+
+.gc__stat:hover {
+    border-color: rgba(236, 26, 163, 0.5);
+    transform: translateY(-3px);
+}
+
+.gc__stat-key {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 10px;
+}
+
+.gc__stat-val {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+}
+
+.gc__ref {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
+.gc__note {
+    margin-top: 18px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Racconto + foto trincia */
+.gc__pitch {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(28px, 4vw, 56px);
+    margin-top: clamp(48px, 6vw, 84px);
+}
+
+.gc__claim {
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.gc__claim em {
+    font-style: italic;
+    background: linear-gradient(120deg, var(--color-accent) 0%, var(--color-accent-soft) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gc__pitch-text p {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.gc__pitch-text p + p { margin-top: 12px; }
+.gc__pitch-text strong { color: var(--color-text); font-weight: 600; }
+
+.gc__values {
+    margin: 22px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.gc__values li {
+    position: relative;
+    padding-left: 26px;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.gc__values strong { color: var(--color-text); font-weight: 600; }
+
+/* Pallino magenta come i nodi della sidenav: stesso linguaggio visivo */
+.gc__values li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(236, 26, 163, 0.16);
+}
+
+.gc__pitch-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.gc__subhead {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: clamp(44px, 5vw, 64px) 0 20px;
+}
+
+/* Cinque formule commerciali */
+.gc__formulas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.gc__formulas a {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 20px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-surface);
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-align: center;
+    transition: border-color 0.25s, background 0.25s, transform 0.25s var(--ease-out);
+}
+
+.gc__formulas a:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface-hover);
+    transform: translateY(-3px);
+}
+
+/* Servizi */
+.gc__services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
+}
+
+.gc__services li {
+    padding: 9px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: rgba(16, 16, 21, 0.6);
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.gc__services strong { color: var(--color-text); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+    .range__panel.is-active { animation: none; }
+    .gc__stat:hover,
+    .gc__formulas a:hover { transform: none; }
 }
 
 .node__stage {
@@ -1303,6 +1627,55 @@ button { font-family: inherit; }
     .flyer__pill { padding: 6px 12px 6px 6px; font-size: 0.7rem; }
 
     .flyer__pill-thumb { width: 24px; height: 24px; }
+
+    /* Selettore gamma e pannello GreenCare su mobile */
+    .range {
+        margin: -12px auto 28px;
+        width: 100%;
+    }
+
+    .range__tab {
+        flex: 1;
+        padding: 10px 12px;
+        font-size: 0.8125rem;
+    }
+
+    .gc__hero {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    /* La foto prima del testo: e' lei a spiegare cosa fa il robot */
+    .gc__hero-media { order: -1; }
+
+    .gc__ctas .btn { flex: 1; min-width: 150px; }
+
+    .gc__stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gc__stat { padding: 16px 12px; }
+
+    .gc__pitch {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .gc__pitch-media { order: -1; }
+
+    /* Cinque formule: 5 colonne su mobile diventano illeggibili */
+    .gc__formulas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gc__formulas a { padding: 16px 10px; font-size: 0.875rem; }
+
+    /* "Demo in campo" e' la CTA piu' importante: da sola in fondo, a tutta larghezza */
+    .gc__formulas li:last-child { grid-column: 1 / -1; }
+
+    .gc__services li { font-size: 0.8125rem; padding: 8px 14px; }
 
     /* Caratteristiche: tighter spacing on mobile */
     .node__labels {

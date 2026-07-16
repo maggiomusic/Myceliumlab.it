@@ -31,6 +31,44 @@ const spy = new IntersectionObserver((entries) => {
 
 sections.forEach(s => spy.observe(s));
 
+// --- Caratteristiche: selettore gamma Mycelium Node / GreenCare ---
+const rangeTabs = Array.from(document.querySelectorAll('.range__tab'));
+
+if (rangeTabs.length) {
+    function selectRange(tab) {
+        rangeTabs.forEach(t => {
+            const on = t === tab;
+            const panel = document.getElementById(t.getAttribute('aria-controls'));
+            t.classList.toggle('is-active', on);
+            t.setAttribute('aria-selected', String(on));
+            // Solo la tab attiva resta nel flusso di Tab: le frecce muovono fra le gamme.
+            t.tabIndex = on ? 0 : -1;
+            if (!panel) return;
+            panel.hidden = !on;
+            panel.classList.toggle('is-active', on);
+        });
+    }
+
+    rangeTabs.forEach(tab => {
+        tab.addEventListener('click', () => selectRange(tab));
+
+        tab.addEventListener('keydown', (e) => {
+            const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+            if (!dir) return;
+            e.preventDefault();
+            const next = rangeTabs[(rangeTabs.indexOf(tab) + dir + rangeTabs.length) % rangeTabs.length];
+            selectRange(next);
+            next.focus();
+        });
+    });
+
+    // #greencare in URL apre direttamente la gamma (utile per link e QR).
+    if (location.hash === '#greencare') {
+        const gcTab = rangeTabs.find(t => t.dataset.range === 'greencare');
+        if (gcTab) selectRange(gcTab);
+    }
+}
+
 // --- Mycelium Node: label click opens a full-screen popup ---
 const nodeLabels = document.querySelectorAll('.node__label');
 const popup = document.getElementById('nodePopup');
