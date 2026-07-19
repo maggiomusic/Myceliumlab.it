@@ -1,7 +1,7 @@
 {
   "name": "Mycelium Lab — Il sistema operativo dell'agricoltura rigenerativa",
   "short_name": "Mycelium Lab",
-  "description": "Robot agricoli elettrici, autonomi e modulari per un'agricoltura rigenerativa, distribuita e accessibile.",
+  "description": "Robot agricoli elettrici e autonomi: Mycelium Node per il campo, GreenCare per la cura professionale del verde, Harvest per la raccolta in serra.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -13,16 +13,22 @@
   "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
-      "src": "img/logo2.png",
+      "src": "img/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "img/logo2.png",
+      "src": "img/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

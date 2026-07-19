@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://myceliumlab.it/</loc>
-        <lastmod>2026-06-02</lastmod>
+        <lastmod>2026-07-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="it" href="https://myceliumlab.it/"/>
@@ -23,6 +23,46 @@
             <image:loc>https://myceliumlab.it/img/concept.png</image:loc>
             <image:title>Concept Mycelium Lab</image:title>
             <image:caption>Filosofia dell'agricoltura rigenerativa Mycelium</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/greencare-bordo-strade.jpg</image:loc>
+            <image:title>Mycelium GreenCare su scarpata stradale</image:title>
+            <image:caption>Robot cingolati per la cura del verde su pendenze e scarpate</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/greencare-argine.jpg</image:loc>
+            <image:title>Mycelium GreenCare su argine, guidato da radiocomando</image:title>
+            <image:caption>Manutenzione di argini con l'operatore a distanza in sicurezza</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/greencare-strada-urbana.jpg</image:loc>
+            <image:title>Mycelium GreenCare nel verde urbano</image:title>
+            <image:caption>Sfalcio di aiuole e bordi stradali in ambito urbano</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/greencare-fotovoltaico.jpg</image:loc>
+            <image:title>Mycelium GreenCare in un impianto fotovoltaico</image:title>
+            <image:caption>Sfalcio dell'erba fra i filari di pannelli solari</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/greencare-trincia.jpg</image:loc>
+            <image:title>Mycelium GreenCare con attrezzo trincia</image:title>
+            <image:caption>Trinciatura della vegetazione ai margini di un bosco</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/harvest-copertina.jpg</image:loc>
+            <image:title>Mycelium Harvest durante la raccolta</image:title>
+            <image:caption>Robot autonomo per la raccolta della frutta in frutteto</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/harvest-mono.jpg</image:loc>
+            <image:title>Mycelium Harvest Mono, braccio singolo</image:title>
+            <image:caption>Raccolta selettiva delle mele in serra con visione artificiale</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://myceliumlab.it/img/harvest-twin.jpg</image:loc>
+            <image:title>Mycelium Harvest Twin, doppio braccio</image:title>
+            <image:caption>Raccolta intensiva delle fragole in serra</image:caption>
         </image:image>
     </url>
 </urlset>
