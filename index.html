@@ -74,7 +74,11 @@
 
     <!-- ===== Fonts & Styles ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- ?v= e' cache-busting: Hostinger serve css/js con max-age 7 giorni, mentre
+         index.html non e' in cache. Senza il parametro un visitatore di ritorno
+         resta con il foglio di stile vecchio fino a una settimana dopo il deploy.
+         Va incrementato a ogni modifica di style.css o script.js. -->
+    <link rel="stylesheet" href="style.css?v=20260719">
 
     <!-- ===== Structured data (Schema.org JSON-LD) for AEO ===== -->
     <!-- Organization + LocalBusiness: identifies the company for Google Knowledge Panel, AI search engines (Perplexity, ChatGPT, Gemini), and rich results. -->
@@ -907,6 +911,6 @@
         <p>marchio &copy; copyright Mycelium Lab s.r.l. &mdash; rights reserved &mdash; P.IVA 04262350368</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260719"></script>
 </body>
 </html>
