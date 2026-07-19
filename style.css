@@ -1046,6 +1046,10 @@ button { font-family: inherit; }
     height: auto;
     aspect-ratio: 16 / 10;
     object-fit: cover;
+    /* Le foto sono 4:3 e il taglio a 16:10 toglie ~17% in verticale: ancorando
+       in alto invece che al centro resta in quadro la parte che conta (la testa
+       della telecamera del Mono, i bracci del Twin) e si perde il pavimento. */
+    object-position: center 25%;
 }
 
 .harvest__card-body {
