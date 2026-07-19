@@ -9,8 +9,8 @@
 
     <!-- ===== Primary SEO ===== -->
     <title>Mycelium Lab &mdash; Il sistema operativo dell'agricoltura rigenerativa | Robot agricoli elettrici autonomi</title>
-    <meta name="description" content="Mycelium Lab progetta robot agricoli elettrici, autonomi e modulari per un'agricoltura rigenerativa, distribuita e accessibile. Una piattaforma aperta che restituisce suolo, biodiversità, produttività e tempo. Made in Modena, Italy.">
-    <meta name="keywords" content="agricoltura rigenerativa, robot agricolo, robot agricolo elettrico, agricoltura di precisione, agtech, agritech, agricoltura autonoma, agricoltura sostenibile, robot per agricoltura, robotica agricola italia, mycelium lab, mycelium node, agricoltura distribuita, piattaforma agricola open, robot trattore elettrico, automazione agricola, agricoltura 4.0, modena, italia">
+    <meta name="description" content="Mycelium Lab progetta robot agricoli elettrici e autonomi: Mycelium Node per il campo, GreenCare per la cura professionale del verde, Harvest per la raccolta in serra. Una piattaforma aperta che restituisce suolo, biodiversità, produttività e tempo. Made in Modena, Italy.">
+    <meta name="keywords" content="agricoltura rigenerativa, robot agricolo, robot agricolo elettrico, agricoltura di precisione, agtech, agritech, agricoltura autonoma, agricoltura sostenibile, robot per agricoltura, robotica agricola italia, mycelium lab, mycelium node, mycelium greencare, mycelium harvest, robot raccolta automatica, robot raccolta serra, raccolta selettiva, robot cingolato cura del verde, agricoltura distribuita, piattaforma agricola open, robot trattore elettrico, automazione agricola, agricoltura 4.0, modena, italia">
     <meta name="author" content="Mycelium Lab s.r.l.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -180,6 +180,21 @@
             "seller": { "@id": "https://myceliumlab.it/#organization" },
             "areaServed": ["IT", "EU"]
           }
+        },
+        {
+          "@type": "Product",
+          "@id": "https://myceliumlab.it/#mycelium-harvest",
+          "name": "Mycelium Harvest",
+          "description": "Robot autonomo per la raccolta di frutta e ortaggi in serre e colture ad alto valore. Riconosce, seleziona e raccoglie il prodotto in modo autonomo, con visione artificiale, telemetria da remoto e due configurazioni: Harvest Mono a singolo braccio e Harvest Twin a doppio braccio.",
+          "image": [
+            "https://myceliumlab.it/img/harvest-copertina.jpg",
+            "https://myceliumlab.it/img/harvest-mono.jpg",
+            "https://myceliumlab.it/img/harvest-twin.jpg"
+          ],
+          "brand": { "@id": "https://myceliumlab.it/#organization" },
+          "manufacturer": { "@id": "https://myceliumlab.it/#organization" },
+          "category": "Robot autonomo per la raccolta agricola",
+          "url": "https://myceliumlab.it/#harvest"
         }
       ]
     }
@@ -378,6 +393,8 @@
                         data-range="node" aria-selected="true" aria-controls="rangePanelNode">Mycelium Node</button>
                 <button class="range__tab" type="button" role="tab" id="rangeTabGreencare"
                         data-range="greencare" aria-selected="false" aria-controls="rangePanelGreencare" tabindex="-1">GreenCare</button>
+                <button class="range__tab" type="button" role="tab" id="rangeTabHarvest"
+                        data-range="harvest" aria-selected="false" aria-controls="rangePanelHarvest" tabindex="-1">Harvest</button>
             </div>
 
             <div class="range__panel is-active" id="rangePanelNode" role="tabpanel" aria-labelledby="rangeTabNode">
@@ -504,6 +521,178 @@
                 </ul>
 
             </div><!-- /rangePanelGreencare -->
+
+            <div class="range__panel" id="rangePanelHarvest" role="tabpanel" aria-labelledby="rangeTabHarvest" hidden>
+
+                <div class="harvest__hero">
+                    <div class="harvest__hero-text">
+                        <span class="harvest__label">Mycelium Harvest</span>
+                        <h3 class="harvest__title">Raccolta autonoma per serre e colture ad alto valore</h3>
+                        <p class="harvest__subtitle"><strong>Mycelium Harvest</strong> riconosce, seleziona e raccoglie frutta e ortaggi in modo autonomo. Una soluzione progettata per aumentare la <strong>produttivit&agrave;</strong>, ridurre il <strong>lavoro manuale ripetitivo</strong> e mantenere costante la <strong>qualit&agrave; della raccolta</strong>.</p>
+                        <div class="harvest__ctas">
+                            <a href="#contatti" class="btn btn--primary">Richiedi informazioni</a>
+                        </div>
+                        <a href="#harvest-models" class="harvest__link">Scopri Mono e Twin <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <figure class="harvest__hero-media">
+                        <img src="img/harvest-copertina.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+                             alt="Robot autonomo Mycelium Harvest per la raccolta selettiva in serra">
+                    </figure>
+                </div>
+
+                <ul class="harvest__stats">
+                    <li class="harvest__stat">
+                        <span class="harvest__stat-key">Visione</span>
+                        <span class="harvest__stat-val">Intelligenza artificiale</span>
+                    </li>
+                    <li class="harvest__stat">
+                        <span class="harvest__stat-key">Raccolta</span>
+                        <span class="harvest__stat-val">Selettiva e automatizzata</span>
+                    </li>
+                    <li class="harvest__stat">
+                        <span class="harvest__stat-key">Controllo</span>
+                        <span class="harvest__stat-val">Telemetria da remoto</span>
+                    </li>
+                    <li class="harvest__stat">
+                        <span class="harvest__stat-key">Ambiente</span>
+                        <span class="harvest__stat-val">Serre e colture specializzate</span>
+                    </li>
+                </ul>
+
+                <!-- Modelli -->
+                <div class="harvest__models" id="harvest-models">
+                    <h4 class="harvest__models-title">Due configurazioni. Un unico obiettivo.</h4>
+                    <p class="harvest__models-sub">Automatizzare le attivit&agrave; di raccolta pi&ugrave; ripetitive e intensive.</p>
+
+                    <div class="harvest__cards">
+                        <article class="harvest__card">
+                            <figure class="harvest__card-media">
+                                <img src="img/harvest-mono.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+                                     alt="Robot Mycelium Harvest Mono a singolo braccio durante la raccolta selettiva fra i filari di una coltura">
+                            </figure>
+                            <div class="harvest__card-body">
+                                <h5 class="harvest__card-title">Harvest Mono</h5>
+                                <p class="harvest__card-sub">Agile e compatto</p>
+                                <p class="harvest__card-desc">Robot autonomo a <strong>singolo braccio</strong> per la raccolta selettiva in serre, frutteti e colture specializzate.</p>
+                                <ul class="harvest__card-list">
+                                    <li>Un braccio robotico</li>
+                                    <li>Adatto a filari e passaggi stretti</li>
+                                    <li>Visione AI per riconoscere il prodotto</li>
+                                    <li>Raccolta, taglio e deposito automatici</li>
+                                    <li>Controllo e monitoraggio da remoto</li>
+                                </ul>
+                                <p class="harvest__card-fit">Ideale per iniziare ad automatizzare la raccolta con una soluzione compatta e flessibile.</p>
+                                <a href="#contatti" class="btn btn--ghost harvest__card-btn">Scopri Harvest Mono</a>
+                            </div>
+                        </article>
+
+                        <article class="harvest__card">
+                            <figure class="harvest__card-media">
+                                <img src="img/harvest-twin.jpg" width="1400" height="1050" loading="lazy" decoding="async"
+                                     alt="Robot Mycelium Harvest Twin a doppio braccio al lavoro in una serra intensiva">
+                            </figure>
+                            <div class="harvest__card-body">
+                                <h5 class="harvest__card-title">Harvest Twin</h5>
+                                <p class="harvest__card-sub">Massima produttivit&agrave;</p>
+                                <p class="harvest__card-desc">Robot autonomo a <strong>doppio braccio</strong> progettato per la raccolta intensiva in serra.</p>
+                                <ul class="harvest__card-list">
+                                    <li>Due bracci robotici indipendenti</li>
+                                    <li>Maggiore densit&agrave; di lavoro</li>
+                                    <li>Dashboard e telemetria in tempo reale</li>
+                                    <li>Controllo delle missioni da remoto</li>
+                                    <li>Architettura predisposta per la gestione di flotte</li>
+                                </ul>
+                                <p class="harvest__card-fit">Ideale per serre intensive e aziende che cercano elevata continuit&agrave; operativa.</p>
+                                <a href="#contatti" class="btn btn--ghost harvest__card-btn">Scopri Harvest Twin</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Colture -->
+                <h4 class="harvest__subhead">Progettato per colture ad alto valore</h4>
+                <ul class="harvest__crops">
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 7.5c3.6 0 6 2.3 6 5.4S15.6 20 12 20s-6-2.3-6-7.1 2.4-5.4 6-5.4Z"/>
+                            <path d="M12 7.5V5.2"/>
+                            <path d="M12 5.2c-1.1-1-2.4-1.3-3.9-1 .3 1.5 1.1 2.5 2.4 3M12 5.2c1.1-1 2.4-1.3 3.9-1-.3 1.5-1.1 2.5-2.4 3"/>
+                        </svg>
+                        <span>Pomodori</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M17.8 6.2c1.8 1.8 1.1 5.4-1.6 8.1s-6.3 3.4-8.1 1.6-1.1-5.4 1.6-8.1 6.3-3.4 8.1-1.6Z"/>
+                            <path d="m10.6 9.4 1.5 1.5M13.1 12l1.5 1.5M8.6 12.3l1.5 1.5"/>
+                        </svg>
+                        <span>Cetrioli</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 8c4 0 6 2.1 6 5.2 0 3.5-2.3 6.3-6 6.3s-6-2.8-6-6.3C6 10.1 8 8 12 8Z"/>
+                            <path d="M12 8V5.5"/>
+                            <path d="M9.6 5.2h4.8"/>
+                        </svg>
+                        <span>Peperoni</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M16.4 9.1c1.9 1.9 1.2 5.6-1.5 8.3s-6.4 3.4-8.3 1.5-1.2-5.6 1.5-8.3 6.4-3.4 8.3-1.5Z"/>
+                            <path d="m16.4 9.1 1.9-1.9"/>
+                            <path d="M14.2 6.5c1.4-1.4 2.9-1.9 4.6-1.6.3 1.7-.2 3.2-1.6 4.6"/>
+                        </svg>
+                        <span>Melanzane</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 20c3.3 0 6-2.9 6-6.4 0-2-1.5-3.6-3.4-3.6-1 0-1.9.4-2.6 1.1-.7-.7-1.6-1.1-2.6-1.1C7.5 10 6 11.6 6 13.6 6 17.1 8.7 20 12 20Z"/>
+                            <path d="M12 11.1V8.4"/>
+                            <path d="M12 8.4c-1-.9-2.2-1.2-3.6-.9.3 1.4 1 2.3 2.2 2.8M12 8.4c1-.9 2.2-1.2 3.6-.9-.3 1.4-1 2.3-2.2 2.8"/>
+                            <circle cx="10.4" cy="14.6" r=".55"/>
+                            <circle cx="13.6" cy="14.6" r=".55"/>
+                            <circle cx="12" cy="17.2" r=".55"/>
+                        </svg>
+                        <span>Fragole</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="13.6" r="6.1"/>
+                            <path d="M12 7.5V5"/>
+                            <path d="M12.4 5.4c.9-1.5 2.3-2.2 4.2-2.2 0 2-.9 3.4-2.7 4.1"/>
+                        </svg>
+                        <span>Frutta selezionata</span>
+                    </li>
+                </ul>
+                <p class="harvest__note">La configurazione del sistema di visione e della presa viene sviluppata in funzione della coltura.</p>
+
+                <!-- Come funziona -->
+                <h4 class="harvest__subhead">Come funziona</h4>
+                <ol class="harvest__steps">
+                    <li class="harvest__step">
+                        <span class="harvest__step-n" aria-hidden="true">1</span>
+                        <h5 class="harvest__step-title">Riconosce</h5>
+                        <p>La visione artificiale identifica il prodotto e ne valuta <strong>posizione</strong> e <strong>maturazione</strong>.</p>
+                    </li>
+                    <li class="harvest__step">
+                        <span class="harvest__step-n" aria-hidden="true">2</span>
+                        <h5 class="harvest__step-title">Raccoglie</h5>
+                        <p>Il braccio esegue <strong>presa</strong>, eventuale <strong>taglio</strong> e <strong>deposito</strong> in modo controllato.</p>
+                    </li>
+                    <li class="harvest__step">
+                        <span class="harvest__step-n" aria-hidden="true">3</span>
+                        <h5 class="harvest__step-title">Registra</h5>
+                        <p>Il sistema salva <strong>dati operativi</strong>, <strong>produttivit&agrave;</strong> e <strong>stato delle missioni</strong>.</p>
+                    </li>
+                </ol>
+
+                <!-- Chiusura -->
+                <div class="harvest__closing">
+                    <h4 class="harvest__closing-title">Automatizza la raccolta. Proteggi la tua produttivit&agrave;.</h4>
+                    <p>Scopri quale configurazione Harvest &egrave; pi&ugrave; adatta alla tua serra e alle tue colture.</p>
+                    <a href="#contatti" class="btn btn--primary btn--large">Parliamo del tuo progetto</a>
+                </div>
+
+            </div><!-- /rangePanelHarvest -->
 
             <!-- Spec content (hidden, used by JS) -->
             <template id="nodeSpecs">

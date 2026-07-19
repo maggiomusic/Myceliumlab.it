@@ -634,9 +634,11 @@ button { font-family: inherit; }
 .range__panel[hidden] { display: none; }
 
 /* Il pannello Node puo' stare sui 1200px di .node__inner perche' ha tutto
-   centrato; GreenCare ha testo allineato a sinistra, quindi rientra nei
-   1100px che gia' usano .apps e .values__columns per non finire sotto la sidenav. */
-#rangePanelGreencare {
+   centrato; GreenCare e Harvest hanno testo allineato a sinistra, quindi
+   rientrano nei 1100px che gia' usano .apps e .values__columns per non
+   finire sotto la sidenav. */
+#rangePanelGreencare,
+#rangePanelHarvest {
     max-width: 1100px;
     margin-inline: auto;
 }
@@ -651,14 +653,16 @@ button { font-family: inherit; }
 }
 
 /* --- Pannello GreenCare --- */
-.gc__hero {
+.gc__hero,
+.harvest__hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     align-items: center;
     gap: clamp(28px, 4vw, 56px);
 }
 
-.gc__label {
+.gc__label,
+.harvest__label {
     display: inline-block;
     font-family: var(--font-heading);
     font-size: 0.75rem;
@@ -669,7 +673,8 @@ button { font-family: inherit; }
     margin-bottom: 16px;
 }
 
-.gc__title {
+.gc__title,
+.harvest__title {
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 3.2vw, 2.7rem);
     font-weight: 600;
@@ -677,23 +682,27 @@ button { font-family: inherit; }
     letter-spacing: -0.02em;
 }
 
-.gc__subtitle {
+.gc__subtitle,
+.harvest__subtitle {
     margin-top: 18px;
     color: var(--color-text-secondary);
     font-size: 1.0625rem;
     line-height: 1.7;
 }
 
-.gc__subtitle strong { color: var(--color-text); font-weight: 600; }
+.gc__subtitle strong,
+.harvest__subtitle strong { color: var(--color-text); font-weight: 600; }
 
-.gc__ctas {
+.gc__ctas,
+.harvest__ctas {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 28px;
 }
 
-.gc__link {
+.gc__link,
+.harvest__link {
     display: inline-block;
     margin-top: 20px;
     color: var(--color-accent);
@@ -702,9 +711,12 @@ button { font-family: inherit; }
     transition: color 0.2s;
 }
 
-.gc__link span { display: inline-block; transition: transform 0.25s var(--ease-out); }
-.gc__link:hover { color: var(--color-accent-soft); }
-.gc__link:hover span { transform: translateX(5px); }
+.gc__link span,
+.harvest__link span { display: inline-block; transition: transform 0.25s var(--ease-out); }
+.gc__link:hover,
+.harvest__link:hover { color: var(--color-accent-soft); }
+.gc__link:hover span,
+.harvest__link:hover span { transform: translateX(5px); }
 
 /* Galleria hero: stesso comportamento di Applicazioni (vedi initGallery),
    ma 4:3 invece di 16:9 perche' vive in una colonna, non a tutta pagina. */
@@ -790,14 +802,16 @@ button { font-family: inherit; }
 }
 
 /* Indicatori sintetici */
-.gc__stats {
+.gc__stats,
+.harvest__stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
     margin-top: clamp(36px, 5vw, 60px);
 }
 
-.gc__stat {
+.gc__stat,
+.harvest__stat {
     padding: 22px 20px;
     border: 1px solid var(--color-border);
     border-radius: 14px;
@@ -806,12 +820,14 @@ button { font-family: inherit; }
     transition: border-color 0.25s, transform 0.25s var(--ease-out);
 }
 
-.gc__stat:hover {
+.gc__stat:hover,
+.harvest__stat:hover {
     border-color: rgba(236, 26, 163, 0.5);
     transform: translateY(-3px);
 }
 
-.gc__stat-key {
+.gc__stat-key,
+.harvest__stat-key {
     display: block;
     font-size: 0.75rem;
     color: var(--color-text-muted);
@@ -820,7 +836,8 @@ button { font-family: inherit; }
     margin-bottom: 10px;
 }
 
-.gc__stat-val {
+.gc__stat-val,
+.harvest__stat-val {
     display: block;
     font-family: var(--font-heading);
     font-size: clamp(1.05rem, 1.6vw, 1.35rem);
@@ -836,7 +853,8 @@ button { font-family: inherit; }
     vertical-align: super;
 }
 
-.gc__note {
+.gc__note,
+.harvest__note {
     margin-top: 18px;
     font-size: 0.8rem;
     color: var(--color-text-muted);
@@ -908,7 +926,8 @@ button { font-family: inherit; }
     box-shadow: 0 0 0 3px rgba(236, 26, 163, 0.16);
 }
 
-.gc__pitch-media img {
+.gc__pitch-media img,
+.harvest__hero-media img {
     width: 100%;
     height: auto;
     border-radius: 16px;
@@ -916,7 +935,8 @@ button { font-family: inherit; }
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
 }
 
-.gc__subhead {
+.gc__subhead,
+.harvest__subhead {
     font-family: var(--font-heading);
     font-size: 0.75rem;
     font-weight: 500;
@@ -974,9 +994,248 @@ button { font-family: inherit; }
 
 .gc__services strong { color: var(--color-text); font-weight: 600; }
 
+/* --- Pannello Harvest -------------------------------------
+   Lo scheletro (hero, stats, label, titoli, note) e' condiviso con
+   GreenCare piu' sopra: qui stanno solo i blocchi propri di Harvest. */
+
+.harvest__models {
+    margin-top: clamp(48px, 6vw, 84px);
+    scroll-margin-top: 100px;   /* il link "Scopri Mono e Twin" non finisce sotto il bordo */
+}
+
+.harvest__models-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.harvest__models-sub {
+    margin: 10px auto 0;
+    max-width: 560px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.7;
+}
+
+.harvest__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 24px);
+    margin-top: clamp(28px, 3.5vw, 44px);
+}
+
+.harvest__card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: var(--color-surface);
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s var(--ease-out);
+}
+
+.harvest__card:hover {
+    border-color: rgba(236, 26, 163, 0.5);
+    transform: translateY(-4px);
+}
+
+.harvest__card-media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.harvest__card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: clamp(20px, 2.4vw, 30px);
+}
+
+.harvest__card-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.harvest__card-sub {
+    margin-top: 4px;
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.harvest__card-desc {
+    margin-top: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.harvest__card-desc strong { color: var(--color-text); font-weight: 600; }
+
+.harvest__card-list {
+    display: grid;
+    gap: 9px;
+    margin: 18px 0;
+}
+
+.harvest__card-list li {
+    position: relative;
+    padding-left: 24px;
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+}
+
+.harvest__card-list li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 0.58em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(236, 26, 163, 0.16);
+}
+
+/* margin-top:auto allinea i bottoni delle due card anche con testi di lunghezza diversa */
+.harvest__card-fit {
+    margin-top: auto;
+    padding-top: 6px;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.harvest__card-btn {
+    margin-top: 18px;
+    align-self: flex-start;
+}
+
+/* Colture */
+.harvest__crops {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.harvest__crops li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    background: var(--color-surface);
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    transition: border-color 0.25s, color 0.25s;
+}
+
+.harvest__crops li:hover {
+    border-color: rgba(236, 26, 163, 0.5);
+    color: var(--color-text);
+}
+
+.harvest__crops svg {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Come funziona */
+.harvest__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(14px, 2vw, 22px);
+}
+
+.harvest__step {
+    padding: clamp(22px, 2.4vw, 30px);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: var(--color-surface);
+}
+
+.harvest__step-n {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(236, 26, 163, 0.45);
+    border-radius: 50%;
+    background: rgba(236, 26, 163, 0.1);
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.harvest__step-title {
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.harvest__step p {
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+}
+
+.harvest__step strong { color: var(--color-text); font-weight: 600; }
+
+/* Chiusura */
+.harvest__closing {
+    margin-top: clamp(44px, 5vw, 68px);
+    padding: clamp(32px, 4vw, 52px) clamp(20px, 3vw, 40px);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(236, 26, 163, 0.12), transparent 65%),
+        var(--color-surface);
+    text-align: center;
+}
+
+.harvest__closing-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.harvest__closing p {
+    margin: 12px auto 26px;
+    max-width: 520px;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .range__panel.is-active { animation: none; }
     .gc__stat:hover,
+    .harvest__stat:hover,
+    .harvest__card:hover,
     .gc__formulas a:hover { transform: none; }
 }
 
@@ -1610,6 +1869,9 @@ button { font-family: inherit; }
     .values__columns {
         grid-template-columns: 1fr;
     }
+
+    /* Tablet: sei colture su una riga diventano illeggibili prima delle card */
+    .harvest__crops { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1715,22 +1977,40 @@ button { font-family: inherit; }
         font-size: 0.8125rem;
     }
 
-    .gc__hero {
+    .gc__hero,
+    .harvest__hero {
         grid-template-columns: 1fr;
         gap: 26px;
     }
 
     /* Le foto prima del testo: sono loro a spiegare cosa fa il robot */
-    .gc__gallery { order: -1; }
+    .gc__gallery,
+    .harvest__hero-media { order: -1; }
 
     .gc__ctas .btn { flex: 1; min-width: 150px; }
 
-    .gc__stats {
+    .gc__stats,
+    .harvest__stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
-    .gc__stat { padding: 16px 12px; }
+    .gc__stat,
+    .harvest__stat { padding: 16px 12px; }
+
+    /* Harvest: card sovrapposte, passaggi in verticale, colture a due colonne */
+    .harvest__cards { grid-template-columns: 1fr; }
+
+    .harvest__card-btn { align-self: stretch; }
+
+    .harvest__crops {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .harvest__crops li { padding: 16px 10px; }
+
+    .harvest__steps { grid-template-columns: 1fr; }
 
     .gc__pitch {
         grid-template-columns: 1fr;

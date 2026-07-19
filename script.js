@@ -62,11 +62,21 @@ if (rangeTabs.length) {
         });
     });
 
-    // #greencare in URL apre direttamente la gamma (utile per link e QR).
-    if (location.hash === '#greencare') {
-        const gcTab = rangeTabs.find(t => t.dataset.range === 'greencare');
-        if (gcTab) selectRange(gcTab);
+    // L'hash apre direttamente una gamma (utile per link, QR e campagne).
+    // Gli alias sono grafie alternative che portano allo stesso tab; l'URL
+    // canonico resta il nome della gamma (#greencare, #harvest).
+    const RANGE_ALIASES = { harvester: 'harvest' };
+
+    function openRangeFromHash() {
+        const hash = location.hash.replace('#', '').toLowerCase();
+        if (!hash) return;
+        const range = RANGE_ALIASES[hash] || hash;
+        const tab = rangeTabs.find(t => t.dataset.range === range);
+        if (tab && !tab.classList.contains('is-active')) selectRange(tab);
     }
+
+    openRangeFromHash();
+    window.addEventListener('hashchange', openRangeFromHash);
 }
 
 // --- Mycelium Node: label click opens a full-screen popup ---
