@@ -1874,11 +1874,17 @@ button { font-family: inherit; }
     .harvest__crops { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 768px) {
-    .page {
-        padding: 80px 20px 80px;
-    }
-
+/* La sidenav a colonna e' fissa e occupa i primi ~171px, mentre il contenuto
+   e' centrato con max-width 1100: perche' non le finisca sotto servono
+   (VP - 1100) / 2 >= ~191px, cioe' almeno ~1480px di viewport. Sotto quella
+   soglia si sovrapponevano — a 1280px sul bordo delle foto, a 1024px
+   (iPad in orizzontale, o una finestra a mezzo schermo) addirittura le voci
+   di menu sopra il testo dei paragrafi.
+   Da qui in giu' la sidenav diventa quindi il pannello a tendina con
+   l'hamburger, che il sito aveva gia' ma solo sotto i 768px.
+   Soglia separata dal resto del layout mobile, che resta a 768px: un
+   portatile da 1300px deve avere l'hamburger, non la grafica del telefono. */
+@media (max-width: 1480px) {
     .sidenav {
         position: fixed;
         top: 0;
@@ -1916,6 +1922,12 @@ button { font-family: inherit; }
     }
 
     .mobilenav__toggle { display: flex; }
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 80px 20px 80px;
+    }
 
     /* HOME: image scales (contain) instead of being cropped on narrow viewports */
     .home__hero {
